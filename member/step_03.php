@@ -77,7 +77,9 @@
 								</tr>
 								<tr>
 									<th scope="col"><span class="icons">*</span>아이디</th>
-									<td><input type="text" class="input-text" style="width:302px" placeholder="영문자로 시작하는 4~15자의 영문소문자, 숫자" /><a href="#" class="btn-s-tin ml10">중복확인</a></td>
+									<td><input type="text" class="input-text" style="width:302px" placeholder="영문자로 시작하는 4~15자의 영문소문자, 숫자" />
+										<a href="#" class="btn-s-tin ml10">중복확인</a>
+									</td>
 								</tr>
 								<tr>
 									<th scope="col"><span class="icons">*</span>비밀번호</th>
