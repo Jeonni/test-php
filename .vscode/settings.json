@@ -1,0 +1,4 @@
+{
+    "php.validate.enable" : false,
+    "php.validate.executablePath": "D:/php/php.exe"
+}
