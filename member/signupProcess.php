@@ -8,8 +8,11 @@ $hashedPassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
 // 이메일 주소 병합 
 $email = $_POST['email_prefix'] . "@" . $_POST['email_domain'];
 
-// 휴대폰 번호 병함
+// 휴대폰 번호 병합
 $phone_number =  $_POST['phone_1'] . "-" . $_POST['phone_2'] . "-" . $_POST['phone_3'];
+
+// 일반전화 번호 병합
+$landline_number = $_POST['landline_1'] . "-" . $_POST['landline_2'] . "-" . $_POST['landline_3'];
 
 $sql = "INSERT INTO test_user (name, user_id, password, email, phone_number, landline_number, address)
         VALUES (
@@ -18,7 +21,7 @@ $sql = "INSERT INTO test_user (name, user_id, password, email, phone_number, lan
             '{$hashedPassword}', 
             '{$email}', 
             '{$phone_number}', 
-            '{$_POST['landline_number']}', 
+            '{$landline_number}', 
             '{$_POST['address']}')";
 
 $result = mysqli_query($conn, $sql);
