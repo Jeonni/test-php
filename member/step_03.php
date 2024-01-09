@@ -150,6 +150,7 @@
 						function checkDuplicate() {
 							const userIdInput = document.querySelector("#user-id");
 							const idCheckResult = document.querySelector("#id-check-result");
+							const signupButton = document.querySelector("#signup-button");
 
 							// 사용자가 아이디를 입력했는지 확인
 							if (!userIdInput.value) {
@@ -168,9 +169,11 @@
 									if (response === "duplicate") {
 										// idCheckResult.textContent = "이미 사용 중인 아이디입니다.";
 										alert ("이미 사용 중인 아이디입니다.");
+										signupButton.disabled = true; // 이미 사용 중인 아이디일 경우, 회원가입 버튼 비활성화
 									} else {
 										// idCheckResult.textContent = "사용 가능한 아이디입니다.";
 										alert( "사용 가능한 아이디입니다.");
+										signupButton.disabled = false; // 사용 가능한 아이디일 경우, 회원가입 버튼 활성화
 									}
 								},
 								error: function() {
