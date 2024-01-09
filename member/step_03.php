@@ -32,6 +32,15 @@
 	<!--[if lte IE 9]> <script src="/js/common/place_holder.js"></script> <![endif]-->
 </head>
 
+<?php
+session_start();
+
+$phoneNumber1 = isset($_SESSION['phone_number1']) ? $_SESSION['phone_number1'] : '';
+$phoneNumber2 = isset($_SESSION['phone_number2']) ? $_SESSION['phone_number2'] : '';
+$phoneNumber3 = isset($_SESSION['phone_number3']) ? $_SESSION['phone_number3'] : '';
+
+?>
+
 <body>
 	<!-- skip nav -->
 	<div id="skip-nav">
@@ -70,7 +79,6 @@
 								<col style="width:15%">
 							</colgroup>
 							<tbody>
-
 								<tr>
 									<th scope="col"><span class="icons">*</span>이름</th>
 									<td><input type="name" name="name" class="input-text" id="name" style="width:302px" /></td>
@@ -107,9 +115,9 @@
 								<tr>
 									<th scope="col"><span class="icons">*</span>휴대폰 번호</th>
 									<td>
-										<input type="tel" name="phone_1" id="phone_number" class="input-text" style="width:88px" /> -
-										<input type="tel" name="phone_2" id="phone_number" class="input-text" style="width:88px" /> -
-										<input type="tel" name="phone_3" id="phone_number" class="input-text" style="width:88px" />
+										<input type="tel" name="phone_1" id="phone_number" class="input-text" style="width:88px" value="<?php echo $phoneNumber1; ?>" readonly /> -
+										<input type="tel" name="phone_2" id="phone_number" class="input-text" style="width:88px" value="<?php echo $phoneNumber2; ?>" readonly /> -
+										<input type="tel" name="phone_3" id="phone_number" class="input-text" style="width:88px" value="<?php echo $phoneNumber3; ?>" readonly />
 									</td>
 								</tr>
 								<tr>

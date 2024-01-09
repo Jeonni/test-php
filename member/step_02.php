@@ -5,6 +5,10 @@ session_start();
 
 $message = ''; // 출력할 메시지를 저장할 변수
 
+$_SESSION['phone_number1'] = isset($_POST['phone_1']) ? $_POST['phone_1'] : '';
+$_SESSION['phone_number2'] = isset($_POST['phone_2']) ? $_POST['phone_2'] : '';
+$_SESSION['phone_number3'] = isset($_POST['phone_3']) ? $_POST['phone_3'] : '';
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	// 휴대폰 인증을 위한 세션 변수에 고정값 저장
 	$_SESSION['verification_code'] = '123456';
@@ -102,10 +106,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 							<form id="phoneVerificationForm" action="/member/step_02.php" method="post">
 								<br />
-								<label for="verification_code1">인증번호 입력:</label>
-								<input type="text" class="input-text" id="verification_code1" name="verification_code1" style="width:50px" required /> -
-								<input type="text" class="input-text" id="verification_code2" name="verification_code2" style="width:50px" /> -
-								<input type="text" class="input-text" id="verification_code3" name="verification_code3" style="width:50px" />
+								<label for="phone_number">인증번호 입력:</label>
+								<input type="text" class="input-text" id="phone_1" name="phone_1" style="width:50px" required /> -
+								<input type="text" class="input-text" id="phone_2" name="phone_2" style="width:50px" /> -
+								<input type="text" class="input-text" id="phone_3" name="phone_3" style="width:50px" />
 								<button type="button" class="btn-s-line" onclick="requestVerificationCode()">인증번호 받기</button>
 
 								<br /><br />
@@ -120,9 +124,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 					<script>
 						function requestVerificationCode() {
 							//간단한 유효성 검사 수행
-							var phoneInput1 = document.getElementById('verification_code1');
-							var phoneInput2 = document.getElementById('verification_code2');
-							var phoneInput3 = document.getElementById('verification_code3');
+							var phoneInput1 = document.getElementById('phone_1');
+							var phoneInput2 = document.getElementById('phone_2');
+							var phoneInput3 = document.getElementById('phone_3');
 
 							if (!(isValidPhoneNumber1(phoneInput1.value) && isValidPhoneNumber2(phoneInput2.value) && isValidPhoneNumber2(phoneInput3.value))) {
 								alert('올바른 휴대폰 번호를 입력하세요.');
