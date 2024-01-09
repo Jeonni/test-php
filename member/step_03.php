@@ -104,10 +104,24 @@
 										</select>
 									</td>
 								</tr>
+
+								<!-- <tr>
+									<th scope="col"><span class="icons">*</span>휴대폰 번호</th>
+									<td>
+										<input type="text" class="input-text" style="width:50px" /> -
+										<input type="text" class="input-text" style="width:50px" /> -
+										<input type="text" class="input-text" style="width:50px" />
+									</td>
+								</tr> -->
+
+
 								<tr>
 									<th scope="col"><span class="icons">*</span>휴대폰 번호</th>
 									<td>
-										<input type="tel" name="phone_number" class="input-text" id="phone_number" style="width:302px" />
+										<!-- <input type="tel" name="phone_number" class="input-text" id="phone_number" style="width:302px" /> -->
+										<input type="tel" name="phone_1" id="phone_number" class="input-text" style="width:50px" /> -
+										<input type="tel" name="phone_2" id="phone_number" class="input-text" style="width:50px" /> -
+										<input type="tel" name="phone_3" id="phone_number" class="input-text" style="width:50px" />
 									</td>
 								</tr>
 								<tr>
