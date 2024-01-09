@@ -94,7 +94,14 @@
 								<tr>
 									<th scope="col"><span class="icons">*</span>이메일주소</th>
 									<td>
-										<input type="email" name="email" class="input-text" id="email" style="width:302px" />
+										<input type="email" name="email_prefix" class="input-text" id="email" style="width:138px" /> @
+										<select name="email_domain" class="input-sel" style="width:160px">
+											<option value="gmail.com">gmail.com</option>
+											<option value="naver.com">naver.com</option>
+											<option value="daum.com">daum.com</option>
+											<option value="nate.com">nate.com</option>
+											<option value="hanmail.com">hanmail.com</option>
+										</select>
 									</td>
 								</tr>
 								<tr>
@@ -168,11 +175,11 @@
 								success: function(response) {
 									if (response === "duplicate") {
 										// idCheckResult.textContent = "이미 사용 중인 아이디입니다.";
-										alert ("이미 사용 중인 아이디입니다.");
+										alert("이미 사용 중인 아이디입니다.");
 										signupButton.disabled = true; // 이미 사용 중인 아이디일 경우, 회원가입 버튼 비활성화
 									} else {
 										// idCheckResult.textContent = "사용 가능한 아이디입니다.";
-										alert( "사용 가능한 아이디입니다.");
+										alert("사용 가능한 아이디입니다.");
 										signupButton.disabled = false; // 사용 가능한 아이디일 경우, 회원가입 버튼 활성화
 									}
 								},
