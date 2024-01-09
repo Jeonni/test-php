@@ -77,8 +77,10 @@
 								</tr>
 								<tr>
 									<th scope="col"><span class="icons">*</span>아이디</th>
-									<td><input type="text" class="input-text" style="width:302px" placeholder="영문자로 시작하는 4~15자의 영문소문자, 숫자" />
-										<a href="#" class="btn-s-tin ml10">중복확인</a>
+									<td>
+										<span id="id-check-result"></span>
+										<input type="text" name="user_id" class="input-text" id="user-id" style="width:302px" placeholder="영문자로 시작하는 4~15자의 영문소문자, 숫자" />
+										<a href="#" class="btn-s-tin ml10" onclick="checkDuplicate()">중복확인</a>
 									</td>
 								</tr>
 								<tr>
@@ -98,13 +100,13 @@
 								<tr>
 									<th scope="col"><span class="icons">*</span>휴대폰 번호</th>
 									<td>
-										<input type="phone_number" name="phone_number" class="input-text" id="phone_number" style="width:302px" />
+										<input type="tel" name="phone_number" class="input-text" id="phone_number" style="width:302px" />
 									</td>
 								</tr>
 								<tr>
 									<th scope="col"><span class="icons"></span>일반전화 번호</th>
 									<td>
-										<input type="landline_number" name="landline_number" class="input-text" id="landline_number" style="width:302px" />
+										<input type="tel" name="landline_number" class="input-text" id="landline_number" style="width:302px" />
 									</td>
 								</tr>
 								<tr>
@@ -114,7 +116,7 @@
 											<label>우편번호 <input type="text" class="input-text ml5" style="width:242px" disabled /></label><a href="#" class="btn-s-tin ml10">주소찾기</a>
 										</p>
 										<p class="mt10">
-											<label>주소 <input type="address" name="address" class="input-text ml5" id="address" style="width:719px" /></label>
+											<label>주소 <input type="text" name="address" class="input-text ml5" id="address" style="width:719px" /></label>
 										</p>
 									</td>
 								</tr>
@@ -143,6 +145,42 @@
 							}
 						});
 					</script>
+
+					<script>
+						function checkDuplicate() {
+							const userIdInput = document.querySelector("#user-id");
+							const idCheckResult = document.querySelector("#id-check-result");
+
+							// 사용자가 아이디를 입력했는지 확인
+							if (!userIdInput.value) {
+								alert("아이디를 입력해주세요.");
+								return;
+							}
+
+							// 아이디 중복을 확인하기 위한 AJAX 요청
+							$.ajax({
+								method: "POST",
+								url: "checkDuplicate.php",
+								data: {
+									user_id: userIdInput.value
+								},
+								success: function(response) {
+									if (response === "duplicate") {
+										// idCheckResult.textContent = "이미 사용 중인 아이디입니다.";
+										alert ("이미 사용 중인 아이디입니다.");
+									} else {
+										// idCheckResult.textContent = "사용 가능한 아이디입니다.";
+										alert( "사용 가능한 아이디입니다.");
+									}
+								},
+								error: function() {
+									alert("서버 오류가 발생했습니다. 잠시 후 다시 시도해주세요.");
+									// console.error("[POST] AJAX 오류: " + status + "\n에러: " + error);
+								}
+							});
+						}
+					</script>
+
 				</div>
 			</div>
 		</div>
