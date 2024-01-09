@@ -15,8 +15,8 @@ switch ($mode) {
     case 'step_03':
         include 'step_03.php';
         break;
-    case 'regist':
-        include 'regist.php';
+    case 'complete':
+        include 'complete.php';
         break;
     default:
         echo "잘못된 경로입니다.";
