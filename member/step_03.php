@@ -148,19 +148,27 @@ $phoneNumber3 = isset($_SESSION['phone_number3']) ? $_SESSION['phone_number3'] :
 
 					</form>
 
-					<!-- 비밀번호 일치 확인 -->
+
+					<!-- 비밀번호 유효성 검사 -->
 					<script>
 						const signupForm = document.querySelector("#signup-form");
 						const signupButton = document.querySelector("#signup-button");
 						const password = document.querySelector("#password");
 						const passwordCheck = document.querySelector("#password-check");
 
-						signupButton.addEventListener("click", function(e) {
-							if (password.value && password.value === passwordCheck.value) {
+						// 비밀번호 8-15자의 영문자/숫자 조합
+						var passwordRegex = /^[a-zA-Z0-9]{8,15}$/;
 
-								signupForm.submit();
+						// 비밀번호 일치 확인
+						signupButton.addEventListener("click", function(e) {
+							if (passwordRegex.test(password.value)) {
+								if (password.value && password.value === passwordCheck.value) {
+									signupForm.submit();
+								} else {
+									alert("비밀번호가 일치하지 않습니다");
+								}
 							} else {
-								alert("비밀번호가 일치하지 않습니다");
+								alert("비밀번호는 최소 8-15자의 영문자/숫자 조합이어야 합니다.");
 							}
 						});
 					</script>
