@@ -31,6 +31,16 @@
 	<script type="text/javascript" src="http://q.hackershrd.com/worksheet/js/plugins/bxslider/bxslider.js"></script>
 	<script type="text/javascript" src="http://q.hackershrd.com/worksheet/js/ui.js"></script>
 	<!--[if lte IE 9]> <script src="/js/common/place_holder.js"></script> <![endif]-->
+
+	<style>
+		.id-message {
+			color: red;
+		}
+
+		.password-message {
+			color: red;
+		}
+	</style>
 </head>
 
 <?php
@@ -88,17 +98,24 @@ $phoneNumber3 = isset($_SESSION['phone_number3']) ? $_SESSION['phone_number3'] :
 									<th scope="col"><span class="icons">*</span>아이디</th>
 									<td>
 										<span id="id-check-result"></span>
-										<input type="text" name="user_id" class="input-text" id="user-id" style="width:302px" placeholder="영문자로 시작하는 4~15자의 영문소문자, 숫자" />
+										<input type="text" name="user_id" class="input-text" id="user-id" style="width:302px" placeholder="영문자로 시작하는 4~15자의 영문소문자, 숫자" oninput="validateId()" />
 										<a href="#" class="btn-s-tin ml10" onclick="checkDuplicate()">중복확인</a>
+										<div id="id-message" class="id-message"></div>
 									</td>
 								</tr>
 								<tr>
 									<th scope="col"><span class="icons">*</span>비밀번호</th>
-									<td><input type="password" name="password" class="input-text" id="password" style="width:302px" placeholder="8-15자의 영문자/숫자 혼합" /></td>
+									<td>
+										<input type="password" name="password" class="input-text" id="password" style="width:302px" placeholder="8-15자의 영문자/숫자 혼합" oninput="validatePassword()" />
+										<div id="password-message" class="password-message"></div>
+									</td>
 								</tr>
 								<tr>
 									<th scope="col"><span class="icons">*</span>비밀번호 확인</th>
-									<td><input type="password" class="input-text" id="password-check" style="width:302px" /></td>
+									<td>
+										<input type="password" class="input-text" id="password-check" style="width:302px" oninput="validateCheckPassword()" />
+										<div id="password-message" class="password-message"></div>
+									</td>
 								</tr>
 								<tr>
 									<th scope="col"><span class="icons">*</span>이메일주소</th>
@@ -149,30 +166,65 @@ $phoneNumber3 = isset($_SESSION['phone_number3']) ? $_SESSION['phone_number3'] :
 					</form>
 
 
-					<!-- 비밀번호 유효성 검사 -->
+					<!-- 비밀번호 정규식 유효성 검사 -->
 					<script>
-						const signupForm = document.querySelector("#signup-form");
-						const signupButton = document.querySelector("#signup-button");
-						const password = document.querySelector("#password");
-						const passwordCheck = document.querySelector("#password-check");
+						function validatePassword() {
+							const password = document.querySelector("#password");
+							const messageDiv = document.getElementById('password-message');
 
-						// 비밀번호 8-15자의 영문자/숫자 조합
-						var passwordRegex = /^[a-zA-Z0-9]{8,15}$/;
+							// 비밀번호 8-15자의 영문자/숫자 조합
+							var passwordRegex = /^[a-zA-Z0-9]{8,15}$/;
 
-						// 비밀번호 일치 확인
-						signupButton.addEventListener("click", function(e) {
+							// 비밀번호 유효성 검사
 							if (passwordRegex.test(password.value)) {
-								if (password.value && password.value === passwordCheck.value) {
-									signupForm.submit();
-								} else {
-									alert("비밀번호가 일치하지 않습니다");
-								}
+								messageDiv.innerHTML = "적절한 길이입니다.";
+								messageDiv.style.color = "green";
 							} else {
-								alert("비밀번호는 최소 8-15자의 영문자/숫자 조합이어야 합니다.");
+								messageDiv.innerHTML = "비밀번호 8-15자의 영문자/숫자 조합이어야 합니다.";
+								messageDiv.style.color = "red";
 							}
-						});
+						}
 					</script>
 
+					<!-- 비밀번호 일치 유효성 검사 -->
+					<script>
+						function validateCheckPassword() {
+							const password = document.querySelector("#password");
+							const passwordCheck = document.querySelector("#password-check");
+							const messageDiv = document.getElementById('password-message');
+
+							if (password.value && password.value == passwordCheck.value) {
+								messageDiv.innerHTML = "비밀번호가 일치합니다."
+								messageDiv.style.color = "green";
+							} else {
+								messageDiv.innerHTML = "비밀번호가 일치하지 않습니다.";
+								messageDiv.style.color = "red";
+							}
+						}
+					</script>
+
+					<!-- 아이디 정규식 유효성 검사 -->
+					<script>
+						function validateId() {
+							const user_id = document.querySelector("#user-id");
+							const messageDiv = document.getElementById('id-message');
+
+							// 아이디 영문자로 시작하는 4-15자의 영소문자
+							var userIdRegex = /^[a-z]{4,15}/g;
+
+							// 아이디 유효성 검사
+							if (userIdRegex.test(user_id.value)) {
+								messageDiv.innerHTML = "아이디 유효성 조건에 일치합니다.";
+								messageDiv.style.color = "green";
+							} else {
+								messageDiv.innerHTML = "아이디는 영문자로 시작하는 4-15자의 영소문자, 숫자여야 합니다.";
+								messageDiv.style.color = "red";
+							}
+
+						}
+					</script>
+
+					<!-- 아이디 입력여부 및 중복 검사 -->
 					<script>
 						function checkDuplicate() {
 							const userIdInput = document.querySelector("#user-id");
