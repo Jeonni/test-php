@@ -165,51 +165,14 @@ $phoneNumber3 = isset($_SESSION['phone_number3']) ? $_SESSION['phone_number3'] :
 
 					</form>
 
-					<!-- 다음 단계로 넘어가는 form -->
+					<!-- 다음 단계로 이동 -->
 					<script>
 						const signupForm = document.querySelector("#signup-form");
 						const signupButton = document.querySelector("#signup-button");
 
-						signupButton.addEventListener("click", function(e){
+						signupButton.addEventListener("click", function(e) {
 							signupForm.submit();
 						});
-					</script>
-
-					<!-- 비밀번호 정규식 유효성 검사 -->
-					<script>
-						function validatePassword() {
-							const password = document.querySelector("#password");
-							const messageDiv = document.getElementById('password-message');
-
-							// 비밀번호 8-15자의 영문자/숫자 조합
-							var passwordRegex = /^[a-zA-Z0-9]{8,15}$/;
-
-							// 비밀번호 유효성 검사
-							if (passwordRegex.test(password.value)) {
-								messageDiv.innerHTML = "적절한 길이입니다.";
-								messageDiv.style.color = "green";
-							} else {
-								messageDiv.innerHTML = "비밀번호 8-15자의 영문자/숫자 조합이어야 합니다.";
-								messageDiv.style.color = "red";
-							}
-						}
-					</script>
-
-					<!-- 비밀번호 일치 유효성 검사 -->
-					<script>
-						function validateCheckPassword() {
-							const password = document.querySelector("#password");
-							const passwordCheck = document.querySelector("#password-check");
-							const messageDiv = document.getElementById('password-message');
-
-							if (password.value && password.value == passwordCheck.value) {
-								messageDiv.innerHTML = "비밀번호가 일치합니다."
-								messageDiv.style.color = "green";
-							} else {
-								messageDiv.innerHTML = "비밀번호가 일치하지 않습니다.";
-								messageDiv.style.color = "red";
-							}
-						}
 					</script>
 
 					<!-- 아이디 정규식 유효성 검사 -->
@@ -272,6 +235,42 @@ $phoneNumber3 = isset($_SESSION['phone_number3']) ? $_SESSION['phone_number3'] :
 						}
 					</script>
 
+					<!-- 비밀번호 정규식 유효성 검사 -->
+					<script>
+						function validatePassword() {
+							const password = document.querySelector("#password");
+							const messageDiv = document.getElementById('password-message');
+
+							// 비밀번호 8-15자의 영문자/숫자 조합
+							var passwordRegex = /^[a-zA-Z0-9]{8,15}$/;
+
+							// 비밀번호 유효성 검사
+							if (passwordRegex.test(password.value)) {
+								messageDiv.innerHTML = "적절한 길이입니다.";
+								messageDiv.style.color = "green";
+							} else {
+								messageDiv.innerHTML = "비밀번호 8-15자의 영문자/숫자 조합이어야 합니다.";
+								messageDiv.style.color = "red";
+							}
+						}
+					</script>
+
+					<!-- 비밀번호 일치 유효성 검사 -->
+					<script>
+						function validateCheckPassword() {
+							const password = document.querySelector("#password");
+							const passwordCheck = document.querySelector("#password-check");
+							const messageDiv = document.getElementById('password-message');
+
+							if (password.value && password.value == passwordCheck.value) {
+								messageDiv.innerHTML = "비밀번호가 일치합니다."
+								messageDiv.style.color = "green";
+							} else {
+								messageDiv.innerHTML = "비밀번호가 일치하지 않습니다.";
+								messageDiv.style.color = "red";
+							}
+						}
+					</script>
 				</div>
 			</div>
 		</div>
