@@ -106,14 +106,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 							<form id="phoneVerificationForm" action="/member/step_02.php" method="post">
 								<br />
-								<label for="phone_number">인증번호 입력:</label>
 								<input type="text" class="input-text" id="phone_1" name="phone_1" style="width:50px" required /> -
 								<input type="text" class="input-text" id="phone_2" name="phone_2" style="width:50px" /> -
 								<input type="text" class="input-text" id="phone_3" name="phone_3" style="width:50px" />
 								<button type="button" class="btn-s-line" onclick="requestVerificationCode()">인증번호 받기</button>
 
 								<br /><br />
-								<label for="user_input_code">인증번호 확인:</label>
 								<input type="text" class="input-text" id="user_input_code" name="user_input_code" style="width:200px" required />
 								<button type="submit" class="btn-s-line">인증번호 확인</button>
 							</form>
