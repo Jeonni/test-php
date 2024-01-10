@@ -1,5 +1,4 @@
 <!-- Footer -->
-
 <body>
     <div id="footer" class="footer">
         <div class="inner p-r">
