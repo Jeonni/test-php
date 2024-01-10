@@ -165,6 +165,15 @@ $phoneNumber3 = isset($_SESSION['phone_number3']) ? $_SESSION['phone_number3'] :
 
 					</form>
 
+					<!-- 다음 단계로 넘어가는 form -->
+					<script>
+						const signupForm = document.querySelector("#signup-form");
+						const signupButton = document.querySelector("#signup-button");
+
+						signupButton.addEventListener("click", function(e){
+							signupForm.submit();
+						});
+					</script>
 
 					<!-- 비밀번호 정규식 유효성 검사 -->
 					<script>

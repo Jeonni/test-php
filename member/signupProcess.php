@@ -19,6 +19,7 @@ $sql = "INSERT INTO test_user (name, user_id, password, email, phone_number, lan
             '{$_POST['name']}', 
             '{$_POST['user_id']}', 
             '{$hashedPassword}', 
+            -- '{$_POST['password']}',
             '{$email}', 
             '{$phone_number}', 
             '{$landline_number}', 
