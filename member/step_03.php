@@ -210,7 +210,7 @@ $phoneNumber3 = isset($_SESSION['phone_number3']) ? $_SESSION['phone_number3'] :
 							const messageDiv = document.getElementById('id-message');
 
 							// 아이디 영문자로 시작하는 4-15자의 영소문자
-							var userIdRegex = /^[a-z]{4,15}/g;
+							var userIdRegex = /^[a-z][a-z0-9]{3,14}$/;
 
 							// 아이디 유효성 검사
 							if (userIdRegex.test(user_id.value)) {
