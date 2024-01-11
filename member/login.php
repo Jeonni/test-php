@@ -25,10 +25,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			header('Location: /member/index.php?mode=step_03'); // 다음 단계로 이동
 			exit;
 		} else {
-			echo "아이디 혹은 비밀번호를 다시 입력해주세요.";
+			echo "<script>alert('아이디 혹은 비밀번호를 다시 입력해주세요.');</script>";
 		}
 	} else {
-		echo "아이디 혹은 비밀번호를 다시 입력해주세요.";
+		echo "<script>alert('아이디 혹은 비밀번호를 다시 입력해주세요.');</script>";
 	}
 
 	$stmt->close();
