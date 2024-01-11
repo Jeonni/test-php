@@ -4,10 +4,6 @@
 
 <?php include "../member/views/includes/head.php"; ?>
 
-<head>
-	<script type="text/javascript" src="../member/js/step_01.js"></script>
-</head>
-
 <body>
 	<div id="skip-nav">
 		<a href="#content">본문 바로가기</a>

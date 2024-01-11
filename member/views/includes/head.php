@@ -28,6 +28,10 @@
 	<script type="text/javascript" src="http://q.hackershrd.com/worksheet/js/plugins/bxslider/bxslider.js"></script>
 	<script type="text/javascript" src="http://q.hackershrd.com/worksheet/js/ui.js"></script>
 	<!--[if lte IE 9]> <script src="/js/common/place_holder.js"></script> <![endif]-->
+
+	<!-- 추가된 js -->
+	<script type="text/javascript" src="../member/js/step_01.js"></script>
+	<script type="text/javascript" src="../member/js/step_02.js"></script>
 	
 	<style>
 		.id-message {

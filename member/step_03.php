@@ -21,7 +21,7 @@ $phoneNumber3 = isset($_SESSION['phone_number3']) ? $_SESSION['phone_number3'] :
 
 	<!-- Header include -->
 	<?php include "../member/views/includes/header.php"; ?>
-	
+
 	<div id="container" class="container-full">
 		<div id="content" class="content">
 			<div class="inner">
@@ -175,19 +175,19 @@ $phoneNumber3 = isset($_SESSION['phone_number3']) ? $_SESSION['phone_number3'] :
 									user_id: userIdInput.value
 								},
 								success: function(response) {
-									if (response === "duplicate") {
+									// idCheckResult.textContent = "사용 가능한 아이디입니다.";
+									alert("사용 가능한 아이디입니다.");
+									signupButton.disabled = false; // 사용 가능한 아이디일 경우, 회원가입 버튼 활성화
+
+								},
+								error: function(xhr, status, err) {
+									if (xhr.status === 400) {
 										// idCheckResult.textContent = "이미 사용 중인 아이디입니다.";
 										alert("이미 사용 중인 아이디입니다.");
 										signupButton.disabled = true; // 이미 사용 중인 아이디일 경우, 회원가입 버튼 비활성화
 									} else {
-										// idCheckResult.textContent = "사용 가능한 아이디입니다.";
-										alert("사용 가능한 아이디입니다.");
-										signupButton.disabled = false; // 사용 가능한 아이디일 경우, 회원가입 버튼 활성화
+										alert("서버 오류가 발생했습니다. 잠시 후 다시 시도해주세요.");
 									}
-								},
-								error: function() {
-									alert("서버 오류가 발생했습니다. 잠시 후 다시 시도해주세요.");
-									// console.error("[POST] AJAX 오류: " + status + "\n에러: " + error);
 								}
 							});
 						}
