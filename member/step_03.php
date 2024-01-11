@@ -6,6 +6,7 @@
 
 <?php
 session_start();
+
 $phoneNumber1 = isset($_SESSION['phone_number1']) ? $_SESSION['phone_number1'] : '';
 $phoneNumber2 = isset($_SESSION['phone_number2']) ? $_SESSION['phone_number2'] : '';
 $phoneNumber3 = isset($_SESSION['phone_number3']) ? $_SESSION['phone_number3'] : '';
