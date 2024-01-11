@@ -1,6 +1,6 @@
 <!-- 아이디 중복확인 체크 -->
 <?php
-$conn = mysqli_connect('172.16.0.28', 'jeonni', 'test123456', 'test_db');
+require_once "../member/config/db.php";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $userId = mysqli_real_escape_string($conn, $_POST['user_id']);

@@ -1,6 +1,6 @@
 <!-- 회원가입 유저 데이터 DB 저장 -->
 <?php
-$conn = mysqli_connect('172.16.0.28', 'jeonni', 'test123456', 'test_db');
+require_once "../member/config/db.php";
 
 // 비밀번호 해싱
 $hashedPassword = hash('sha256', $_POST['password']);
