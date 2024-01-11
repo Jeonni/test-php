@@ -123,18 +123,16 @@ $phoneNumber3 = isset($_SESSION['phone_number3']) ? $_SESSION['phone_number3'] :
 
 					</form>
 
-					<!-- 다음 단계로 이동 -->
+
 					<script>
 						const signupForm = document.querySelector("#signup-form");
 						const signupButton = document.querySelector("#signup-button");
 
+						// 다음 단계로 이동
 						signupButton.addEventListener("click", function(e) {
 							signupForm.submit();
 						});
-					</script>
 
-					<!-- 아이디 정규식 유효성 검사 -->
-					<script>
 						function validateId() {
 							const user_id = document.querySelector("#user-id");
 							const messageDiv = document.getElementById('id-message');
@@ -152,10 +150,7 @@ $phoneNumber3 = isset($_SESSION['phone_number3']) ? $_SESSION['phone_number3'] :
 							}
 
 						}
-					</script>
 
-					<!-- 아이디 입력여부 및 중복 검사 -->
-					<script>
 						function checkDuplicate() {
 							const userIdInput = document.querySelector("#user-id");
 							const idCheckResult = document.querySelector("#id-check-result");
@@ -191,10 +186,8 @@ $phoneNumber3 = isset($_SESSION['phone_number3']) ? $_SESSION['phone_number3'] :
 								}
 							});
 						}
-					</script>
 
-					<!-- 비밀번호 정규식 유효성 검사 -->
-					<script>
+						// <!-- 비밀번호 정규식 유효성 검사 -->
 						function validatePassword() {
 							const password = document.querySelector("#password");
 							const messageDiv = document.getElementById('password-message');
@@ -211,10 +204,8 @@ $phoneNumber3 = isset($_SESSION['phone_number3']) ? $_SESSION['phone_number3'] :
 								messageDiv.style.color = "red";
 							}
 						}
-					</script>
 
-					<!-- 비밀번호 일치 유효성 검사 -->
-					<script>
+						// 비밀번호 일치 유효성 검사
 						function validateCheckPassword() {
 							const password = document.querySelector("#password");
 							const passwordCheck = document.querySelector("#password-check");
