@@ -115,7 +115,7 @@
                 <div class="inner">
                     <div class="link-box">
                         <!-- 로그인전 -->
-                        <a href="#">로그인</a>
+                        <a id="login-link" href="#">로그인</a>
                         <a id="signup-link" href="#">회원가입</a>
                         <a href="#">상담/고객센터</a>
                         <!-- 로그인후 -->
@@ -129,8 +129,9 @@
 
         <script>
             document.addEventListener('DOMContentLoaded', function() {
-                // 회원가입 링크에 클릭 이벤트 리스너 추가
                 var signupLink = document.getElementById('signup-link');
+                var loginLink = document.getElementById("login-link");
+
                 signupLink.addEventListener('click', function(event) {
                     // 기본 동작(링크 이동)을 막기
                     event.preventDefault();
@@ -145,6 +146,16 @@
                     // 생성된 URL로 이동
                     window.location.href = finalUrl;
                 });
+
+
+                loginLink.addEventListener('click', function(event){
+                    event.preventDefault();
+                    window.location.href = '../member/login.php';
+                });
             });
+
+
+
+
         </script>
 </body>
