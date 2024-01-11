@@ -1,3 +1,4 @@
+<!-- 아이디 중복확인 체크 -->
 <?php
 $conn = mysqli_connect('172.16.0.28', 'jeonni', 'test123456', 'test_db');
 

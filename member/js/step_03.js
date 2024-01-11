@@ -1,10 +1,12 @@
-const signupForm = document.querySelector("#signup-form");
-const signupButton = document.querySelector("#signup-button");
+function register() {
+    const signupForm = document.querySelector("#signup-form");
+    const signupButton = document.querySelector("#signup-button");
 
-// 다음 단계로 이동
-signupButton.addEventListener("click", function (e) {
-    signupForm.submit();
-});
+    // 다음 단계로 이동
+    signupButton.addEventListener("click", function (e) {
+        signupForm.submit();
+    });
+}
 
 function validateId() {
     const user_id = document.querySelector("#user-id");

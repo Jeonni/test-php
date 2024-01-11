@@ -32,6 +32,9 @@
 	<!-- 추가된 js -->
 	<script type="text/javascript" src="../member/js/step_01.js"></script>
 	<script type="text/javascript" src="../member/js/step_02.js"></script>
+	<script type="text/javascript" src="../member/js/step_03.js"></script>
+	<script type="text/javascript" src="../member/js/complete.js"></script>
+	
 	
 	<style>
 		.id-message {
