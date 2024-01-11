@@ -4,7 +4,7 @@
 <!--[if (IE 7)]><html class="no-js ie7" xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko"><![endif]-->
 <!--[if (IE 8)]><html class="no-js ie8" xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko"><![endif]-->
 
-<?php include "app/views/includes/head.php" ?>
+<?php include "member/views/includes/head.php" ?>
 
 <body>
 	<!-- skip nav -->
@@ -14,7 +14,7 @@
 	<!-- //skip nav -->
 
 	<!-- Header include -->
-	<?php include "app/views/includes/header.php"; ?>
+	<?php include "member/views/includes/header.php"; ?>
 
 	<div id="container">
 		<div class="main-slider-applyclass">
@@ -389,7 +389,7 @@
 	</script>
 
 	<!-- Footer include  -->
-	<?php include 'app/views/includes/footer.php'; ?>
+	<?php include 'member/views/includes/footer.php'; ?>
 
 </body>
 
