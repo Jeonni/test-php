@@ -1,3 +1,4 @@
+<!-- 로그인 -->
 <?php
 require_once "../member/config/db.php";
 
@@ -22,10 +23,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		if (hash('sha256', $input_password) === $hashed_password) {
 			$_SESSION["loggedin"] = true;
 			$_SESSION["user_id"] = $row["user_id"];
-			header('Location: /member/index.php?mode=step_03'); // 다음 단계로 이동 --> 수정 필요!
+
+			// 리퍼러를 통한 리다이렉트 처리
+			$redirect_url = $_SERVER['HTTP_REFERER'] ?? '/'; // 기본값은 현재 페이지로 설정
+
+			// 로그인 성공 시 메인 페이지로 리다이렉트
+			header("Location: /");
 			exit;
 		} else {
 			echo "<script>alert('아이디 혹은 비밀번호를 다시 입력해주세요.');</script>";
+
+			 // 로그인 실패 시 이전 페이지로 리다이렉트
+			 header("Location: $redirect_url");
 		}
 	} else {
 		echo "<script>alert('아이디 혹은 비밀번호를 다시 입력해주세요.');</script>";
@@ -53,7 +62,7 @@ $conn->close();
 					<div class="login-input">
 						<div class="input-text-box">
 							<input type="text" class="input-text mb5" placeholder="아이디" name="user_id" style="width:190px" />
-							<input type="text" class="input-text" placeholder="비밀번호" name="password" style="width:190px" />
+							<input type="password" class="input-text" placeholder="비밀번호" name="password" style="width:190px" />
 						</div>
 						<button type="submit" class="btn-login">로그인</button>
 					</div>
