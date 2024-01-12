@@ -5,7 +5,7 @@ $name = $_POST['name'];
 $phone_number =  $_POST['phone_1'] . "-" . $_POST['phone_2'] . "-" . $_POST['phone_3'];
 
 
-$sql = "SELECT user_id FROM test_user WHERE name = '$name' AND '$phone_number'";
+$sql = "SELECT user_id FROM test_user WHERE name = '$name' AND phone_number = '$phone_number'";
 $result = mysqli_query($conn, $sql);
 
 if ($result) {
