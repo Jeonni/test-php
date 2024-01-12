@@ -144,7 +144,7 @@
                 </tr>
                 <tr>
                     <th scope="col">인증번호</th>
-                    <td><input type="text" class="input-text" style="width:478px" /><a href="#" class="btn-s-tin ml10">인증번호 확인</a></td>
+                    <td><input type="text" class="input-text" style="width:302px" /><a href="#" class="btn-s-tin ml10">인증번호 확인</a></td>
                 </tr>
             `;
 		} else if (type === "email") {
@@ -153,8 +153,8 @@
                 <tr>
                     <th scope="col">이메일 주소</th>
                     <td>
-                        <input type="text" class="input-text" style="width:138px" /> @ 
-                        <select class="input-sel" style="width:160px">
+                        <input type="text" class="input-text" style="width:220px" /> @ 
+                        <select class="input-sel" style="width:220px">
 							<option value="gmail.com">gmail.com</option>
 							<option value="naver.com">naver.com</option>
 							<option value="daum.com">daum.com</option>
@@ -166,7 +166,7 @@
                 </tr>
                 <tr>
                     <th scope="col">인증번호</th>
-                    <td><input type="text" class="input-text" style="width:478px" /><a href="#" class="btn-s-tin ml10">인증번호 확인</a></td>
+                    <td><input type="text" class="input-text" style="width:302px" /><a href="#" class="btn-s-tin ml10">인증번호 확인</a></td>
                 </tr>
             `;
 		}
@@ -174,13 +174,3 @@
 </script>
 
 </html>
-
-<tr>
-	<th scope="col">휴대폰 번호</th>
-	<td>
-		<input type="text" class="input-text" style="width:88px" />-
-		<input type="text" class="input-text" style="width:88px" />-
-		<input type="text" class="input-text" style="width:88px" />
-		<a href="#" class="btn-s-tin ml10">인증번호 받기</a>
-	</td>
-</tr>
