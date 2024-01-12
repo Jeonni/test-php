@@ -14,6 +14,9 @@ switch ($mode) {
     case 'complete':
         include 'complete.php';
         break;
+    case 'find_id':
+        include 'find_id.php';
+        break;
     default:
         echo "잘못된 경로입니다.";
         break;
