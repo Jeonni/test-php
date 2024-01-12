@@ -13,7 +13,6 @@ if (isset($_GET['logout'])) {
     header("Location: /"); // 메인 페이지로 리다이렉트
     exit;
 }
-
 ?>
 
 
@@ -138,13 +137,11 @@ if (isset($_GET['logout'])) {
                         <?php if (isset($_SESSION["loggedin"]) && $_SESSION['loggedin'] === true) : ?>
                             <!-- 로그인 후 -->
                             <?php if (isset($_SESSION["loggedin"]) && $_SESSION['loggedin'] === true) : ?>
-                                <!-- 로그인 후에는 user_id를 표시 -->
                                 <a>
                                     <div id="userId"><?php echo $user_id; ?>님</div>
                                 </a>
                             <?php endif; ?>
-
-                            <a href="?logout=true" onclick= "return confirm('정말 로그아웃 하시겠습니까?')">로그아웃</a>
+                            <a href="?logout=true" onclick="return confirm('정말 로그아웃 하시겠습니까?')">로그아웃</a>
                             <a href="#">내정보</a>
                         <?php else : ?>
                             <!-- 로그인 전 -->
