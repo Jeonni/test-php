@@ -1,3 +1,22 @@
+<?php
+session_start();
+
+// 세션에서 user_id 가져오기
+if (isset($_SESSION["loggedin"]) && $_SESSION['loggedin'] === true) {
+    $user_id = $_SESSION["user_id"];
+}
+
+// 로그아웃 처리
+if (isset($_GET['logout'])) {
+    session_unset();
+    session_destroy();
+    header("Location: /"); // 메인 페이지로 리다이렉트
+    exit;
+}
+
+?>
+
+
 <!-- Header -->
 
 <body>
@@ -115,14 +134,38 @@
             <div class="top-section">
                 <div class="inner">
                     <div class="link-box">
+
                         <!-- 로그인전 -->
-                        <a id="login-link" href="#">로그인</a>
+                        <!-- <a id="login-link" href="#">로그인</a>
                         <a id="signup-link" href="#">회원가입</a>
-                        <a href="#">상담/고객센터</a>
+                        <a href="#">상담/고객센터</a> -->
+
+
                         <!-- 로그인후 -->
                         <!-- <a href="#">로그아웃</a>
+                        <a href="#">내정보</a>
+                        <a href="#">상담/고객센터</a> -->
+
+                        <?php if (isset($_SESSION["loggedin"]) && $_SESSION['loggedin'] === true) : ?>
+                            <!-- 로그인 후 -->
+                            <?php if (isset($_SESSION["loggedin"]) && $_SESSION['loggedin'] === true) : ?>
+                                <!-- 로그인 후에는 user_id를 표시 -->
+                                <a>
+                                    <div id="userId"><?php echo $user_id; ?>님</div>
+                                </a>
+                            <?php endif; ?>
+
+                            <a href="?logout=true">로그아웃</a>
                             <a href="#">내정보</a>
-                            <a href="#">상담/고객센터</a> -->
+                        <?php else : ?>
+                            <!-- 로그인 전 -->
+                            <a id="login-link" href="#">로그인</a>
+                            <a id="signup-link" href="#">회원가입</a>
+                        <?php endif; ?>
+
+                        <!-- 공통 -->
+                        <a href="#">상담/고객센터</a>
+
                     </div>
                 </div>
             </div>
@@ -154,5 +197,13 @@
                     window.location.href = '../member/login.php';
                 });
             });
+        </script>
+
+        <script>
+            // js를 사용해 세션에 저장된 user_id를 가져와 표시
+            document.addEventListener("DOMContentLoaded", function()) {
+                const user_id = "<?php echo isset($_SESSION['user_id']) ? $_SESSION['user_id'] : ''; ?>";
+                document.getElementsById("userId").innerHTML = user_id + "님";
+            }
         </script>
 </body>

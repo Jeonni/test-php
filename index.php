@@ -16,9 +16,6 @@
 	<div id="container">
 		<div class="main-slider-applyclass">
 			<div id="applyclass" class="slider-applyclass col4"><!-- 갯수 1개 class="col1" / 갯수 2개 class="col2"  -->
-				<ul class="bxslider">
-
-				</ul>
 				<div id="bx-pager-apply" class="page-applyclass">
 					<a data-slide-index="0" href="#">오픈이벤트</a>
 					<a data-slide-index="1" href="#">보험과 세금케이스</a>
@@ -29,7 +26,6 @@
 		</div>
 
 		<div id="content" class="content">
-
 			<div class="content-section after">
 				<div class="inner">
 					<div class="f-l">
@@ -188,28 +184,32 @@
 		</div>
 	</div>
 
-	<script type="text/javascript">
-		$(document).ready(function() {
-			//main_slider_applyclass
-			var bnrWrap = $('.slider-applyclass')
-			var bnr_slider = bnrWrap.find('.bxslider');
+	<script type="text/javascript"> 
+	$(document).ready(function(){
+	//main_slider_applyclass
+	var bnrWrap = $('.slider-applyclass')
+	var bnr_slider = bnrWrap.find('.bxslider');
 
-			slider = bnr_slider.bxSlider({
-				auto: true,
-				mode: 'fade',
-				cutLimit: 4,
-				speed: 500,
-				autoStart: true,
-				pagerCustom: '#bx-pager-apply',
-				onSliderLoad: function(selector) {
-					bnrWrap.css("overflow", "visible");
-				}
-			});
-			$('.page-applyclass').mouseover(function() {
-				slider.startAuto();
-			});
-		});
-	</script>
+	slider = bnr_slider.bxSlider({
+		auto: true,
+		mode : 'fade',
+		cutLimit: 4,
+		speed: 500,
+		autoStart:true,
+		pagerCustom: '#bx-pager-apply',
+		onSliderLoad: function(selector){
+			bnrWrap.css("overflow","visible");
+		}
+	});
+	$('.page-applyclass').mouseover(function(){
+		slider.startAuto();
+	});
+});
+</script>
+
+	<?php
+	include 'member/js/complete.js;'
+	?>
 	<!-- Footer include  -->
 	<?php include 'member/views/includes/footer.php'; ?>
 </body>
