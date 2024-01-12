@@ -135,17 +135,6 @@ if (isset($_GET['logout'])) {
                 <div class="inner">
                     <div class="link-box">
 
-                        <!-- 로그인전 -->
-                        <!-- <a id="login-link" href="#">로그인</a>
-                        <a id="signup-link" href="#">회원가입</a>
-                        <a href="#">상담/고객센터</a> -->
-
-
-                        <!-- 로그인후 -->
-                        <!-- <a href="#">로그아웃</a>
-                        <a href="#">내정보</a>
-                        <a href="#">상담/고객센터</a> -->
-
                         <?php if (isset($_SESSION["loggedin"]) && $_SESSION['loggedin'] === true) : ?>
                             <!-- 로그인 후 -->
                             <?php if (isset($_SESSION["loggedin"]) && $_SESSION['loggedin'] === true) : ?>
@@ -155,7 +144,7 @@ if (isset($_GET['logout'])) {
                                 </a>
                             <?php endif; ?>
 
-                            <a href="?logout=true">로그아웃</a>
+                            <a href="?logout=true" onclick= "return confirm('정말 로그아웃 하시겠습니까?')">로그아웃</a>
                             <a href="#">내정보</a>
                         <?php else : ?>
                             <!-- 로그인 전 -->
@@ -199,11 +188,5 @@ if (isset($_GET['logout'])) {
             });
         </script>
 
-        <script>
-            // js를 사용해 세션에 저장된 user_id를 가져와 표시
-            document.addEventListener("DOMContentLoaded", function()) {
-                const user_id = "<?php echo isset($_SESSION['user_id']) ? $_SESSION['user_id'] : ''; ?>";
-                document.getElementsById("userId").innerHTML = user_id + "님";
-            }
-        </script>
+       
 </body>
