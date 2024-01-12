@@ -102,6 +102,7 @@ $phoneNumber3 = isset($_SESSION['phone_number3']) ? $_SESSION['phone_number3'] :
 										<input type="tel" name="landline_1" id="landline_number" class="input-text" style="width:88px" /> -
 										<input type="tel" name="landline_2" id="landline_number" class="input-text" style="width:88px" /> -
 										<input type="tel" name="landline_3" id="landline_number" class="input-text" style="width:88px" />
+									</td>
 								</tr>
 								<tr>
 									<th scope="col"><span class="icons">*</span>주소</th>
