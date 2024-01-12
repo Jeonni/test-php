@@ -1,4 +1,5 @@
 <!-- Header -->
+
 <body>
     <!-- skip nav -->
     <div id="skip-nav">
@@ -148,14 +149,10 @@
                 });
 
 
-                loginLink.addEventListener('click', function(event){
+                loginLink.addEventListener('click', function(event) {
                     event.preventDefault();
                     window.location.href = '../member/login.php';
                 });
             });
-
-
-
-
         </script>
 </body>

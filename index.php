@@ -1,9 +1,6 @@
 <!-- 메인 페이지 -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
-<!--[if (IE 7)]><html class="no-js ie7" xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko"><![endif]-->
-<!--[if (IE 8)]><html class="no-js ie8" xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko"><![endif]-->
-
 <?php include "member/views/includes/head.php" ?>
 
 <body>
@@ -20,10 +17,7 @@
 		<div class="main-slider-applyclass">
 			<div id="applyclass" class="slider-applyclass col4"><!-- 갯수 1개 class="col1" / 갯수 2개 class="col2"  -->
 				<ul class="bxslider">
-					<li style="background-color:#f00"><a href="#" target="_blank"><img src="http://prep.champstudy.com/files/banner/f5de95619de01ed9517dbdea717f5f34.jpg" alt="" width="1000" height="350" /></a></li>
-					<li style="background-color:#0f0"><a href="#" target="_blank"><img src="http://prep.champstudy.com/files/banner/af3751c41a59265cd6f7a7f0845cfd06.jpg" alt="" width="1000" height="350" /></a></li>
-					<li style="background-color:#00f"><a href="#" target="_blank"><img src="http://prep.champstudy.com/files/banner/63fe4d746b676398f6371de4f6b4c015.jpg" alt="" width="1000" height="350" /></a></li>
-					<li style="background-color:#e7e7e7"><a href="#" target="_blank"><img src="http://prep.champstudy.com/files/banner/a8a7dd7a6709de9439a1ab17f5779646.jpg" alt="" width="1000" height="350" /></a></li>
+
 				</ul>
 				<div id="bx-pager-apply" class="page-applyclass">
 					<a data-slide-index="0" href="#">오픈이벤트</a>
@@ -52,48 +46,11 @@
 							</ul>
 							<div class="tab-best-con">
 								<ul class="tab-category">
-									<li class="on"><a href="#">근로자카드</a></li><!-- class="on" 활성화 -->
-									<li><a href="#">사업주지원</a></li>
-									<li><a href="#">일반</a></li>
+									<?php include "member/views/includes/text/main/category.php"; ?>
 								</ul>
 								<div class="tab-category-con">
 									<ul class="list-best">
-										<li>
-											<a href="#">
-												<img src="http://www.champstudy.com/files/banner/imglib_files/banner/imglib/main_toeic_review.jpg" alt="" width="198" height="138" />
-												<span class="txt">부자들이 모르는 35가지 보험과<br />세금 케이스</span><!-- 두줄 말줄임 개발처리 -->
-											</a>
-										</li>
-										<li>
-											<a href="#">
-												<img src="http://www.champstudy.com/files/banner/imglib_files/banner/imglib/main_toeic_review.jpg" alt="" width="198" height="138" />
-												<span class="txt">부자들이 모르는 35가지 보험과<br />세금 케이스</span>
-											</a>
-										</li>
-										<li>
-											<a href="#">
-												<img src="http://www.champstudy.com/files/banner/imglib_files/banner/imglib/main_toeic_review.jpg" alt="" width="198" height="138" />
-												<span class="txt">부자들이 모르는 35가지 보험과<br />세금 케이스</span>
-											</a>
-										</li>
-										<li>
-											<a href="#">
-												<img src="http://www.champstudy.com/files/banner/imglib_files/banner/imglib/main_toeic_review.jpg" alt="" width="198" height="138" />
-												<span class="txt">부자들이 모르는 35가지 보험과<br />세금 케이스</span>
-											</a>
-										</li>
-										<li>
-											<a href="#">
-												<img src="http://www.champstudy.com/files/banner/imglib_files/banner/imglib/main_toeic_review.jpg" alt="" width="198" height="138" />
-												<span class="txt">부자들이 모르는 35가지 보험과<br />세금 케이스</span>
-											</a>
-										</li>
-										<li>
-											<a href="#">
-												<img src="http://www.champstudy.com/files/banner/imglib_files/banner/imglib/main_toeic_review.jpg" alt="" width="198" height="138" />
-												<span class="txt">부자들이 모르는 35가지 보험과<br />세금 케이스</span>
-											</a>
-										</li>
+										<?php include "member/views/includes/text/main/case_01.php"; ?>
 									</ul>
 								</div>
 							</div>
@@ -125,56 +82,12 @@
 							<div class="main-tit-box-h3">
 								<h3 class="main-tit-h3">신규강의</h3>
 							</div>
-
 							<ul class="tab-category2">
-								<li class="on"><a href="#"><span>근로자카드</span></a></li><!-- class="on" 활성화 -->
-								<li><a href="#"><span>사업주지원</span></a></li>
-								<li><a href="#"><span>일반</span></a></li>
+								<?php include "member/views/includes/text/main/category.php"; ?>
 							</ul>
 							<div class="tab-category2-con">
 								<ul class="list-bbs">
-									<li>
-										<a href="#">
-											<span class="tc-brand"><strong>일반직무</strong></span>
-											<span class="sbj ellipsis_line">부자들이 모르는 35가지 보험 부자들이 모르는 35가지 보험</span>
-											<em><i class="icon-new"><span class="hidden">new</span></i></em>
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<span class="tc-brand"><strong>일반직무</strong></span>
-											<span class="sbj ellipsis_line">부자들이 모르는 35가지 보험 부자들이 모르는 35가지 보험</span>
-											<em><i class="icon-new"><span class="hidden">new</span></i></em>
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<span class="tc-brand"><strong>일반직무</strong></span>
-											<span class="sbj ellipsis_line">부자들이 모르는 35가지 보험 부자들이 모르는 35가지 보험</span>
-											<em><i class="icon-new"><span class="hidden">new</span></i></em>
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<span class="tc-brand"><strong>일반직무</strong></span>
-											<span class="sbj ellipsis_line">부자들이 모르는 35가지 보험 부자들이 모르는 35가지 보험</span>
-											<em><i class="icon-new"><span class="hidden">new</span></i></em>
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<span class="tc-brand"><strong>일반직무</strong></span>
-											<span class="sbj ellipsis_line">부자들이 모르는 35가지 보험 부자들이 모르는 35가지 보험</span>
-											<em><i class="icon-new"><span class="hidden">new</span></i></em>
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<span class="tc-brand"><strong>일반직무</strong></span>
-											<span class="sbj ellipsis_line">부자들이 모르는 35가지 보험 부자들이 모르는 35가지 보험</span>
-											<em><i class="icon-new"><span class="hidden">new</span></i></em>
-										</a>
-									</li>
+									<?php include "member/views/includes/text/main/case_02.php"; ?>
 								</ul>
 							</div>
 						</div>
@@ -186,9 +99,7 @@
 				<div class="inner">
 					<span class="tit">직장인 자기개발 교육! <strong>해커스와 정부가 수강료를 지원</strong>합니다.</span>
 					<ul>
-						<li><a href="#"><img src="http://img.hackershrd.com/main/bnr01.png" alt="" width="324" height="214" /></a></li>
-						<li><a href="#"><img src="http://img.hackershrd.com/main/bnr02.png" alt="" width="324" height="214" /></a></li>
-						<li><a href="#"><img src="http://img.hackershrd.com/main/bnr03.png" alt="" width="324" height="214" /></a></li>
+						<?php include 'member/views/includes/images/inner_01.php' ?>
 					</ul>
 				</div>
 			</div>
@@ -201,47 +112,15 @@
 							<h3 class="main-tit-h3">BEST 수강후기</h3>
 						</div>
 						<ul class="list-bbs">
-							<li>
-								<a href="#">
-									<span class="tc-brand"><strong>일반직무</strong></span>
-									<span class="sbj ellipsis_line">부자들이 모르는 35가지 보험 부자들이 부자들이 부자들이 모르는 35가지 보험</span>
-									<em>아이디</em>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<span class="tc-brand"><strong>일반직무</strong></span>
-									<span class="sbj ellipsis_line">부자들이 모르는 35가지 보험 부자들이 부자들이 부자들이 모르는 35가지 보험</span>
-									<em>아이디</em>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<span class="tc-brand"><strong>일반직무</strong></span>
-									<span class="sbj ellipsis_line">부자들이 모르는 35가지 보험 부자들이 부자들이 부자들이 모르는 35가지 보험</span>
-									<em>아이디</em>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<span class="tc-brand"><strong>일반직무</strong></span>
-									<span class="sbj ellipsis_line">부자들이 모르는 35가지 보험 부자들이 부자들이 부자들이 모르는 35가지 보험</span>
-									<em>아이디</em>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<span class="tc-brand"><strong>일반직무</strong></span>
-									<span class="sbj ellipsis_line">부자들이 모르는 35가지 보험 부자들이 부자들이 부자들이 모르는 35가지 보험</span>
-									<em>아이디</em>
-								</a>
-							</li>
+							<?php include "member/views/includes/text/main/case_03.php"; ?>
 						</ul>
 					</div>
 
 					<div class="f-r banner-box">
 						<div class="bxslider-default" data-mode="fade" data-auto="true" data-controls="true" data-pager="true" style="height:254px">
-							<?php include "../member/views/includes/images/images.php"; ?>
+							<ul class="bxslider">
+								<?php include "member/views/includes/images/banner.php"; ?>
+							</ul>
 						</div>
 					</div>
 
@@ -257,31 +136,7 @@
 							<a href="#" class="f-r mt5">더보기 +</a>
 						</div>
 						<ul class="list-bbs">
-							<li>
-								<a href="#">
-									<span class="sbj ellipsis_line">부자들이 모르는 35가지 보험 부자들이 부자들이 부자들이 모르는 35가지 보험</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<span class="sbj ellipsis_line">부자들이 모르는 35가지 보험 부자들이 부자들이 부자들이 모르는 35가지 보험</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<span class="sbj ellipsis_line">부자들이 모르는 35가지 보험 부자들이 부자들이 부자들이 모르는 35가지 보험</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<span class="sbj ellipsis_line">부자들이 모르는 35가지 보험 부자들이 부자들이 부자들이 모르는 35가지 보험</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<span class="sbj ellipsis_line">부자들이 모르는 35가지 보험 부자들이 부자들이 부자들이 모르는 35가지 보험</span>
-								</a>
-							</li>
+							<?php include "member/views/includes/text/main/case_04.php"; ?>
 						</ul>
 					</div>
 
@@ -291,31 +146,7 @@
 							<a href="#" class="f-r mt5">더보기 +</a>
 						</div>
 						<ul class="list-bbs">
-							<li>
-								<a href="#">
-									<span class="sbj ellipsis_line">부자들이 모르는 35가지 보험 부자들이 부자들이 부자들이 모르는 35가지 보험</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<span class="sbj ellipsis_line">부자들이 모르는 35가지 보험 부자들이 부자들이 부자들이 모르는 35가지 보험</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<span class="sbj ellipsis_line">부자들이 모르는 35가지 보험 부자들이 부자들이 부자들이 모르는 35가지 보험</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<span class="sbj ellipsis_line">부자들이 모르는 35가지 보험 부자들이 부자들이 부자들이 모르는 35가지 보험</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<span class="sbj ellipsis_line">부자들이 모르는 35가지 보험 부자들이 부자들이 부자들이 모르는 35가지 보험</span>
-								</a>
-							</li>
+							<?php include "member/views/includes/text/main/case_04.php"; ?>
 						</ul>
 					</div>
 
@@ -346,10 +177,7 @@
 						<dt class="txt">오늘 본 과정 <em class="tc-brand">3</em>건</dt>
 						<dd>
 							<ul>
-								<li><a href="#"><img src="http://www.hackershrd.com/html/images/sub/thum.gif" alt="" width="41" height="29" /></a></li>
-								<li><a href="#"><img src="http://www.hackershrd.com/html/images/sub/thum.gif" alt="" width="41" height="29" /></a></li>
-								<li><a href="#"><img src="http://www.hackershrd.com/html/images/sub/thum.gif" alt="" width="41" height="29" /></a></li>
-								<li><a href="#"><img src="http://www.hackershrd.com/html/images/sub/thum.gif" alt="" width="41" height="29" /></a></li>
+								<?php include 'member/views/includes/images/inner_02.php' ?>
 							</ul>
 						</dd>
 					</dl>
@@ -382,10 +210,8 @@
 			});
 		});
 	</script>
-
 	<!-- Footer include  -->
 	<?php include 'member/views/includes/footer.php'; ?>
-
 </body>
 
 </html>

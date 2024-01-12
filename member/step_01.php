@@ -39,7 +39,7 @@
 					<div class="agree-box">
 						<div class="agree-box-txt">
 							<!-- 이용약관 include -->
-							<?php include "../member/views/includes/text/terms.php"; ?>
+							<?php include "../member/views/includes/text/step_01/terms.php"; ?>
 						</div>
 						<button type="button" class="js_agree_open"><em>펼치기 ▼</em></button>
 						<div class="mt10">
@@ -59,7 +59,7 @@
 					<div class="agree-box">
 						<div class="agree-box-txt">
 							<!-- 개인정보 취급방침 include -->
-							<?php include "../member/views/includes/text/personal.php"; ?>
+							<?php include "../member/views/includes/text/step_01/personal.php"; ?>
 						</div>
 						<button type="button" class="js_agree_open"><em>펼치기 ▼</em></button>
 						<div class="mt10">
