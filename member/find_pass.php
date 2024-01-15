@@ -23,8 +23,8 @@
 				</div>
 
 				<ul class="tab-list">
-					<li><a href="#">아이디 찾기</a></li>
-					<li class="on"><a href="#">비밀번호 찾기</a></li>
+					<li><a href="#" onclick="find_id_pw()">아이디 찾기</a></li>
+					<li class="on"><a href="#" onclick="find_password()">비밀번호 찾기</a></li>
 				</ul>
 
 				<div class="tit-box-h4">
@@ -66,7 +66,7 @@
 									<th scope="col">성명</th>
 									<td><input type="text" name="name" id="name" class="input-text" style="width:302px" /></td>
 								</tr>
-								
+
 								<tr>
 									<th scope="col">아이디</th>
 									<td><input type="text" name="user_id" id="user_id" class="input-text" style="width:302px" /></td>

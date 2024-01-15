@@ -7,7 +7,7 @@
 	<div id="skip-nav">
 		<a href="#content">본문 바로가기</a>
 	</div>
-	
+
 	<?php include "../member/views/includes/header.php"; ?>
 
 	<div id="container" class="container-full">
@@ -22,8 +22,8 @@
 				</div>
 
 				<ul class="tab-list">
-					<li class="on"><a href="#">아이디 찾기</a></li>
-					<li><a href="#">비밀번호 찾기</a></li>
+					<li class="on"><a href="#" onclick="find_id_pw()">아이디 찾기</a></li>
+					<li><a href="#" onclick="find_password()">비밀번호 찾기</a></li>
 				</ul>
 
 				<div class="tit-box-h4">
