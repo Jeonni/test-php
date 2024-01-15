@@ -1,23 +1,3 @@
-<?php
-session_start();
-
-$message = ''; // 출력할 메시지를 저장할 변수
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-	$_SESSION['verification_code'] = '123456';
-	$userInputCode = isset($_POST['user_input_code']) ? $_POST['user_input_code'] : '';
-
-	if ($userInputCode === $_SESSION['verification_code']) {
-		header('Location: /member/index.php?mode=step_03'); // 다음 단계로 이동
-		exit;
-	} else {
-		$message = '본인확인 실패! 올바른 인증번호를 입력하세요.';
-		echo '<script>alert("' . $message . '"); history.back();</script>';
-		exit;
-	}
-}
-?>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
 
@@ -82,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 							<col style="width:15%" />
 						</colgroup>
 
-<!-- 휴대폰 -->
+						<!-- 휴대폰 -->
 						<form action="findIdProcessByPhoneNumber.php" method="POST">
 							<tbody>
 								<tr>
@@ -99,17 +79,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 									</td>
 								</tr>
 
-								<tr>
-									<th scope="col">인증번호</th>
-									<td>
-										<input type="text" class="input-text" id="user_input_code" name="user_input_code" style="width:478px" />
-										<button type="submit" class="btn-s-tin ml10">인증번호 확인</button>
-									</td>
-								</tr>
+									<tr>
+										<th scope="col">인증번호</th>
+										<td>
+											<input type="text" class="input-text" id="user_input_code" name="user_input_code" style="width:478px" />
+											<button type="submit" class="btn-s-tin ml10">인증번호 확인</button>
+										</td>
+									</tr>
 							</tbody>
 						</form>
 
-<!-- 이메일 -->
+						<!-- 이메일 -->
 						<!-- <form action="findIdProcessByEmail.php" method="POST">
 							<tbody>
 								<tr>
@@ -147,12 +127,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 			</div>
 		</div>
 	</div>
-
-	<script>
-		function requestEmail() {
-			alert('인증번호를 요청합니다.');
-		}
-	</script>
 
 	<!-- Footer include  -->
 	<?php include "../member/views/includes/footer.php"; ?>
