@@ -63,7 +63,7 @@
 						</colgroup>
 
 						<!-- 휴대폰 -->
-						<!-- <form action="findIdProcessByPhoneNumber.php" method="POST">
+						<form action="findIdProcess.php" method="POST">
 							<tbody>
 								<tr>
 									<th scope="col">성명</th>
@@ -77,24 +77,6 @@
 										<input type="text" name="phone_3" id="phone_3" class="input-text" style="width:140px" />
 										<button type="button" class="btn-s-tin ml10" onclick="requestVerificationCode()">인증번호 받기</button>
 									</td>
-								</tr>
-
-									<tr>
-										<th scope="col">인증번호</th>
-										<td>
-											<input type="text" class="input-text" id="user_input_code" name="user_input_code" style="width:478px" />
-											<button type="submit" class="btn-s-tin ml10">인증번호 확인</button>
-										</td>
-									</tr>
-							</tbody>
-						</form> -->
-
-						<!-- 이메일 -->
-						<form action="findIdProcessByEmail.php" method="POST">
-							<tbody>
-								<tr>
-									<th scope="col">성명</th>
-									<td><input type="text" name="name" id="name" class="input-text" style="width:302px" /></td>
 								</tr>
 
 								<tr>
