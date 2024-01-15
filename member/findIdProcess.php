@@ -32,7 +32,8 @@ if ($result) {
     $userInputCode = isset($_POST['user_input_code']) ? $_POST['user_input_code'] : '';
 
     if ($userInputCode === $_SESSION['verification_code']) {
-        echo "귀하의 아이디는: " . $row['user_id'];
+        // echo "귀하의 아이디는: " . $row['user_id'];
+        header('Location: /member/index.php?mode=find_id_success&name=' . $name . '&user_id=' . $row['user_id']);
         exit;
     } else {
         $message = '본인확인 실패! 올바른 인증번호를 입력하세요.';
