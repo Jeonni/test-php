@@ -145,8 +145,8 @@ if (isset($_GET['logout'])) {
                             <a href="#">내정보</a>
                         <?php else : ?>
                             <!-- 로그인 전 -->
-                            <a id="login-link" href="#">로그인</a>
-                            <a id="signup-link" href="#">회원가입</a>
+                            <a href="#" onclick="login()">로그인</a>
+                            <a href="#" onclick="signup()">회원가입</a>
                         <?php endif; ?>
 
                         <!-- 공통 -->
@@ -156,32 +156,5 @@ if (isset($_GET['logout'])) {
                 </div>
             </div>
         </div>
-
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                var signupLink = document.getElementById('signup-link');
-                var loginLink = document.getElementById("login-link");
-
-                signupLink.addEventListener('click', function(event) {
-                    // 기본 동작(링크 이동)을 막기
-                    event.preventDefault();
-
-                    // 실제로 이동할 URL과 쿼리 문자열 설정
-                    var targetUrl = "/member/index.php";
-                    var queryString = "mode=step_01";
-
-                    // 쿼리 문자열을 포함한 최종 URL 생성
-                    var finalUrl = targetUrl + "?" + queryString;
-
-                    // 생성된 URL로 이동
-                    window.location.href = finalUrl;
-                });
-
-
-                loginLink.addEventListener('click', function(event) {
-                    event.preventDefault();
-                    window.location.href = '../member/login.php';
-                });
-            });
-        </script>
+    </div>
 </body>

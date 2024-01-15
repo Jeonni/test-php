@@ -1,34 +1,30 @@
 function login() {
-    window.location.href = "login.php";
+    window.location.href = "/member/login.php";
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    var signupLink = document.getElementById('signup-link');
-    var findIdPw = document.getElementById('find-id-pw');
+function signup() {
+    var targetUrl = "/member/index.php"
+    var queryString = "mode=step_01";
 
-    signupLink.addEventListener('click', function (event) {
-        // 기본 동작(링크 이동)을 막기
-        event.preventDefault();
+    var findUrl = targetUrl + "?" + queryString;
 
-        // 실제로 이동할 URL과 쿼리 문자열 설정
-        var targetUrl = "/member/index.php";
-        var queryString = "mode=step_01";
+    window.location.href = findUrl;
+}
 
-        // 쿼리 문자열을 포함한 최종 URL 생성
-        var finalUrl = targetUrl + "?" + queryString;
+function find_password() {
+    var targetUrl = "/member/index.php"
+    var queryString = "mode=find_pass";
 
-        // 생성된 URL로 이동
-        window.location.href = finalUrl;
-    });
+    var findUrl = targetUrl + "?" + queryString;
 
-    findIdPw.addEventListener('click', function (event) {
-        event.preventDefault();
+    window.location.href = findUrl;
+}
 
-        var targetUrl = "/member/index.php";
-        var queryString = "mode=find_id";
+function find_id_pw() {
+    var targetUrl = "/member/index.php";
+    var queryString = "mode=find_id";
 
-        var findUrl = targetUrl + "?" + queryString;
+    var findUrl = targetUrl + "?" + queryString;
 
-        window.location.href = findUrl;
-    });
-});
+    window.location.href = findUrl;
+}

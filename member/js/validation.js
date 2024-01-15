@@ -23,7 +23,7 @@ function isValidPhoneNumber2(phoneNumber) {
 
 // 이메일 유효성 검사 (추가 전)
 function requestEmail() {
-    alert('인증번호를 요청합니다.');
+    alert('인증번호를 요청합니다. 요청받지 못했을 경우, 회원 정보를 다시 확인한 후 입력해주세요.');
 }
 
 // 회원가입

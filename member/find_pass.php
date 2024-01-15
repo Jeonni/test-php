@@ -7,7 +7,8 @@
 	<div id="skip-nav">
 		<a href="#content">본문 바로가기</a>
 	</div>
-	
+
+	<!-- Header include -->
 	<?php include "../member/views/includes/header.php"; ?>
 
 	<div id="container" class="container-full">
@@ -22,12 +23,12 @@
 				</div>
 
 				<ul class="tab-list">
-					<li class="on"><a href="#">아이디 찾기</a></li>
-					<li><a href="#">비밀번호 찾기</a></li>
+					<li><a href="#">아이디 찾기</a></li>
+					<li class="on"><a href="#">비밀번호 찾기</a></li>
 				</ul>
 
 				<div class="tit-box-h4">
-					<h3 class="tit-h4">아이디 찾기 인증 절차</h3>
+					<h3 class="tit-h4">비밀번호 찾기 인증 절차</h3>
 				</div>
 
 				<dl class="find-box">
@@ -59,11 +60,16 @@
 							<col style="width:15%" />
 						</colgroup>
 
-						<form action="findIdProcess.php" method="POST">
+						<form action="findPasswordProcess.php" method="POST">
 							<tbody>
 								<tr>
 									<th scope="col">성명</th>
 									<td><input type="text" name="name" id="name" class="input-text" style="width:302px" /></td>
+								</tr>
+								
+								<tr>
+									<th scope="col">아이디</th>
+									<td><input type="text" name="user_id" id="user_id" class="input-text" style="width:302px" /></td>
 								</tr>
 
 								<tr>
@@ -71,6 +77,7 @@
 									<td><input type="text" name="phone_1" id="phone_1" class="input-text" style="width:140px" /> -
 										<input type="text" name="phone_2" id="phone_2" class="input-text" style="width:140px" /> -
 										<input type="text" name="phone_3" id="phone_3" class="input-text" style="width:140px" />
+										<!-- <button type="button" class="btn-s-tin ml10" onclick="requestVerificationCode()">인증번호 받기</button> -->
 									</td>
 								</tr>
 
@@ -98,13 +105,13 @@
 								</tr>
 							</tbody>
 						</form>
-
 					</table>
 				</div>
 			</div>
 		</div>
 	</div>
 
+	<!-- Footer include  -->
 	<?php include "../member/views/includes/footer.php"; ?>
 </body>
 

@@ -76,8 +76,8 @@ $conn->close();
 					</div>
 
 					<div class="box-btn">
-						<a href="#" class="btn-m-gray" id="signup-link">회원가입</a>
-						<a href="#" class="btn-m-gray" id="find-id-pw">ID/PW 찾기</a>
+						<a href="#" class="btn-m-gray" onclick="signup()">회원가입</a>
+						<a href="#" class="btn-m-gray" onclick="find_id_pw()">ID/PW 찾기</a>
 					</div>
 				</div>
 			</form>
