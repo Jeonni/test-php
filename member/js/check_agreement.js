@@ -46,7 +46,7 @@ function toggleAllAgreements() {
     checkAgreement();
 }
 
-// 다음 단계로 이동하는 핵심 함수
+// 다음 단계로 이동
 function validateAgreements() {
     // 이전에 생성된 메시지 컨테이너를 제거
     if (messageContainer && messageContainer.parentNode) {
@@ -69,7 +69,6 @@ function validateAgreements() {
     var allAgreeChecked = allAgreed.checked;
 
     if (!(allChecked || allAgreeChecked)) {
-        // 경고 메시지 표시
         alert("모든 약관에 동의해야 다음 단계로 진행할 수 있습니다.");
     } else {
         // 다음 단계로 이동

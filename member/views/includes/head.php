@@ -30,11 +30,9 @@
 	<!--[if lte IE 9]> <script src="/js/common/place_holder.js"></script> <![endif]-->
 
 	<!-- 추가된 js -->
-	<script type="text/javascript" src="../member/js/step_01.js"></script>
-	<script type="text/javascript" src="../member/js/step_02.js"></script>
-	<script type="text/javascript" src="../member/js/step_03.js"></script>
-	<script type="text/javascript" src="../member/js/complete.js"></script>
-	<script type="text/javascript" src="../member/js/find_id.js"></script>
+	<script type="text/javascript" src="../member/js/check_agreement.js"></script>
+	<script type="text/javascript" src="../member/js/move_address.js"></script>
+	<script type="text/javascript" src="../member/js/validation.js"></script>
 
 
 	<style>
