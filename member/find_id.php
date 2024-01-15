@@ -63,7 +63,7 @@
 						</colgroup>
 
 						<!-- 휴대폰 -->
-						<form action="findIdProcessByPhoneNumber.php" method="POST">
+						<!-- <form action="findIdProcessByPhoneNumber.php" method="POST">
 							<tbody>
 								<tr>
 									<th scope="col">성명</th>
@@ -87,10 +87,10 @@
 										</td>
 									</tr>
 							</tbody>
-						</form>
+						</form> -->
 
 						<!-- 이메일 -->
-						<!-- <form action="findIdProcessByEmail.php" method="POST">
+						<form action="findIdProcessByEmail.php" method="POST">
 							<tbody>
 								<tr>
 									<th scope="col">성명</th>
@@ -120,7 +120,7 @@
 									</td>
 								</tr>
 							</tbody>
-						</form> -->
+						</form>
 
 					</table>
 				</div>
