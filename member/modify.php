@@ -52,15 +52,16 @@ include "../member/get_user_info.php";
 								<tr>
 									<th scope="col"><span class="icons">*</span>아이디</th>
 									<td>
-										<input type="text" class="input-text" name="user_id" id="new-user-id" style="width:302px" placeholder="영문자로 시작하는 4~15자의 영문소문자, 숫자" oninput="validateId()" />
+										<input type="text" class="input-text" name="user_id" id="new-user-id" style="width:302px" placeholder="영문자로 시작하는 4~15자의 영문소문자, 숫자" oninput="validateId2()" />
 										<a href="#" class="btn-s-tin ml10" onclick="checkDuplicate2()">중복확인</a>
+										<div id="new-id-message" class="id-message"></div>
 									</td>
 								</tr>
 								<tr>
 									<th scope="col"><span class="icons">*</span>휴대폰 번호</th>
 									<td><?php echo $user_data['phone_number']; ?></td>
 								</tr>
-								
+
 							</tbody>
 						</table>
 

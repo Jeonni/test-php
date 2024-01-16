@@ -36,14 +36,6 @@
 
 
 	<style>
-		.id-message {
-			color: red;
-		}
-
-		.password-message {
-			color: red;
-		}
-
 		.hidden {
 			display: none;
 		}

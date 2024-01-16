@@ -39,14 +39,14 @@ function register() {
 
 // 아이디 유효성 검사
 function validateId() {
-    const user_id = document.querySelector("#user-id");
+    const userId = document.querySelector("#user-id");
     const messageDiv = document.getElementById('id-message');
 
     // 아이디 영문자로 시작하는 4-15자의 영소문자
     var userIdRegex = /^[a-z][a-z0-9]{3,14}$/;
 
     // 아이디 유효성 검사
-    if (userIdRegex.test(user_id.value)) {
+    if (userIdRegex.test(userId.value)) {
         messageDiv.innerHTML = "아이디 유효성 조건에 일치합니다.";
         messageDiv.style.color = "green";
     } else {
@@ -69,7 +69,7 @@ function checkDuplicate() {
         method: "POST",
         url: "checkDuplicate.php",
         data: {
-            user_id: userIdInput.value
+            userId: userIdInput.value
         },
         success: function (response) {
             alert("사용 가능한 아이디입니다.");
@@ -82,6 +82,26 @@ function checkDuplicate() {
             }
         }
     });
+}
+
+
+// 아이디 유효성 검사
+function validateId2() {
+    const userId = document.querySelector("#new-user-id");
+    const messageDiv = document.getElementById('new-id-message');
+
+    // 아이디 영문자로 시작하는 4-15자의 영소문자
+    var userIdRegex = /^[a-z][a-z0-9]{3,14}$/;
+
+    // 아이디 유효성 검사
+    if (userIdRegex.test(userId.value)) {
+        messageDiv.innerHTML = "아이디 유효성 조건에 일치합니다.";
+        messageDiv.style.color = "green";
+    } else {
+        messageDiv.innerHTML = "아이디는 영문자로 시작하는 4-15자의 영소문자, 숫자여야 합니다.";
+        messageDiv.style.color = "red";
+    }
+
 }
 
 function checkDuplicate2() {
@@ -97,7 +117,7 @@ function checkDuplicate2() {
         method: "POST",
         url: "checkDuplicate.php",
         data: {
-            user_id: userIdInput.value
+            userId: userIdInput.value
         },
         success: function (response) {
             alert("사용 가능한 아이디입니다.");
