@@ -58,8 +58,6 @@ function validateId() {
 
 function checkDuplicate() {
     const userIdInput = document.querySelector("#user-id");
-    const idCheckResult = document.querySelector("#id-check-result");
-    const signupButton = document.querySelector("#signup-button");
 
     if (!userIdInput.value) {
         alert("아이디를 입력해주세요.");
@@ -75,20 +73,45 @@ function checkDuplicate() {
         },
         success: function (response) {
             alert("사용 가능한 아이디입니다.");
-            // 회원가입 버튼 활성화
-            signupButton.disabled = false;
         },
         error: function (xhr, status, err) {
             if (xhr.status === 400) {
                 alert("이미 사용 중인 아이디입니다.");
-                // 회원가입 버튼 비활성화
-                signupButton.disabled = true;
             } else {
                 alert("서버 오류가 발생했습니다. 잠시 후 다시 시도해주세요.");
             }
         }
     });
 }
+
+function checkDuplicate2() {
+    const userIdInput = document.querySelector("#new-user-id");
+
+    if (!userIdInput.value) {
+        alert("아이디를 입력해주세요.");
+        return;
+    }
+
+    // 아이디 중복 확인: AJAX 요청
+    $.ajax({
+        method: "POST",
+        url: "checkDuplicate.php",
+        data: {
+            user_id: userIdInput.value
+        },
+        success: function (response) {
+            alert("사용 가능한 아이디입니다.");
+        },
+        error: function (xhr, status, err) {
+            if (xhr.status === 400) {
+                alert("이미 사용 중인 아이디입니다.");
+            } else {
+                alert("서버 오류가 발생했습니다. 잠시 후 다시 시도해주세요.");
+            }
+        }
+    });
+}
+
 
 // 비밀번호 조건 유효성 검사
 function validatePassword() {

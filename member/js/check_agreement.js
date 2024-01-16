@@ -1,10 +1,8 @@
 var nextBtn = document.querySelector('.box-btn a');
-var messageContainer; // 메시지를 표시할 div 엘리먼트를 전역으로 선언
-
-// 함수를 호출하여 초기 설정
-checkAgreement();
 
 function checkAgreement() {
+    var messageContainer; // 메시지를 표시할 div 엘리먼트를 전역으로 선언
+
     // 이전에 생성된 메시지 컨테이너를 제거
     if (messageContainer && messageContainer.parentNode) {
         messageContainer.parentNode.removeChild(messageContainer);
@@ -48,6 +46,8 @@ function toggleAllAgreements() {
 
 // 다음 단계로 이동
 function validateAgreements() {
+    var messageContainer; // 메시지를 표시할 div 엘리먼트를 전역으로 선언
+
     // 이전에 생성된 메시지 컨테이너를 제거
     if (messageContainer && messageContainer.parentNode) {
         messageContainer.parentNode.removeChild(messageContainer);
