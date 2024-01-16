@@ -15,9 +15,6 @@ if (isset($_GET['logout'])) {
 }
 ?>
 
-
-<!-- Header -->
-
 <body>
     <!-- skip nav -->
     <div id="skip-nav">
@@ -141,8 +138,8 @@ if (isset($_GET['logout'])) {
                                     <div id="userId"><?php echo $user_id; ?>님</div>
                                 </a>
                             <?php endif; ?>
+                            <a href="#" onclick="modify()">내정보</a>
                             <a href="?logout=true" onclick="return confirm('정말 로그아웃 하시겠습니까?')">로그아웃</a>
-                            <a href="#">내정보</a>
                         <?php else : ?>
                             <!-- 로그인 전 -->
                             <a href="#" onclick="login()">로그인</a>

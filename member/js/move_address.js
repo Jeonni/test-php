@@ -11,6 +11,17 @@ function signup() {
     window.location.href = findUrl;
 }
 
+function modify() {
+    var targetUrl = "/member/index.php"
+    var queryString = "mode=modify";
+
+    var findUrl = targetUrl + "?" + queryString;
+
+    window.location.href = findUrl;
+
+    console.log(findUrl);
+}
+
 function find_password() {
     var targetUrl = "/member/index.php"
     var queryString = "mode=find_pass";
