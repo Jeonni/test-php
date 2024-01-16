@@ -26,6 +26,9 @@ switch ($mode) {
     case 'find_pass_success':
         include 'find_pass_success.php';
         break;
+    case 'modify':
+        include 'modify.php';
+        break;
     default:
         echo "잘못된 경로입니다.";
         break;
