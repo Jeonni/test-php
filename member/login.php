@@ -1,10 +1,11 @@
 <!-- 로그인 -->
 <?php include "../member/loginProcess.php" ?>
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
 
-<?php include "../member/views/includes/head.php"; ?>
+<?php include "../member/layout/head.php"; ?>
 
 <body>
 	<div class="login-section">
@@ -51,7 +52,7 @@
 
 			<div class="login-banner">
 				<div class="bxslider-default" data-mode="fade" data-auto="true" data-controls="true" data-pager="true" style="height:182px">
-					<?php include "../member/views/includes/images/images.php"; ?>
+					<?php include "../member/views/images/images.php"; ?>
 				</div>
 			</div>
 		</div>

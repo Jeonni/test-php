@@ -1,38 +1,8 @@
 <!-- 회원가입 2단계 (본인 확인) -->
-<?php
-session_start();
-
-$message = ''; // 출력할 메시지를 저장할 변수
-
-$_SESSION['phone_number1'] = isset($_POST['phone_1']) ? $_POST['phone_1'] : '';
-$_SESSION['phone_number2'] = isset($_POST['phone_2']) ? $_POST['phone_2'] : '';
-$_SESSION['phone_number3'] = isset($_POST['phone_3']) ? $_POST['phone_3'] : '';
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-	// 휴대폰 인증을 위한 세션 변수에 고정값 저장
-	$_SESSION['verification_code'] = '123456';
-
-	// 사용자가 입력한 인증번호
-	$userInputCode = isset($_POST['user_input_code']) ? $_POST['user_input_code'] : '';
-
-	// 저장된 세션의 인증번호와 사용자 입력이 일치하는지 확인
-	if ($userInputCode === $_SESSION['verification_code']) {
-		// 본인확인 성공
-		header('Location: /member/index.php?mode=step_03'); // 다음 단계로 이동
-		exit;
-	} else {
-		// 본인확인 실패
-		$message = '본인확인 실패! 올바른 인증번호를 입력하세요.';
-		echo '<script>alert("' . $message . '"); history.back();</script>'; // 경고창 표시 후 이전 페이지로 이동
-		exit;
-	}
-}
-?>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
 
-<?php include "../member/views/includes/head.php"; ?>
+<?php include "../member/layout/head.php"; ?>
 
 <body>
 	<!-- skip nav -->
@@ -42,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	<!-- //skip nav -->
 
 	<!-- Header include -->
-	<?php include "../member/views/includes/header.php"; ?>
+	<?php include "../member/layout/header.php"; ?>
 
 	<div id="container" class="container-full">
 		<div id="content" class="content">
@@ -73,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 							<strong>휴대폰 인증</strong>
 							<p>주민번호 없이 메시지 수신 가능한 휴대폰으로 1개 아이디만 회원가입이 가능합니다. </p>
 
-							<form id="phoneVerificationForm" action="/member/step_02.php" method="post">
+							<form action="savePhoneNumber.php" method="post">
 								<br />
 								<input type="text" class="input-text" id="phone_1" name="phone_1" style="width:50px" required /> -
 								<input type="text" class="input-text" id="phone_2" name="phone_2" style="width:50px" /> -
@@ -94,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	</div>
 
 	<!-- Footer include  -->
-	<?php include "../member/views/includes/footer.php"; ?>
+	<?php include "../member/layout/footer.php"; ?>
 
 	</div>
 </body>

@@ -1,17 +1,13 @@
 <!-- 메인 페이지 -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
-<?php include "member/views/includes/head.php" ?>
+<?php include "member/layout/head.php"; ?>
 
 <body>
-	<!-- skip nav -->
 	<div id="skip-nav">
 		<a href="#content">본문 바로가기</a>
 	</div>
-	<!-- //skip nav -->
-
-	<!-- Header include -->
-	<?php include "member/views/includes/header.php"; ?>
+	<?php include "member/layout/header.php"; ?>
 
 	<div id="container">
 		<div class="main-slider-applyclass">
@@ -42,11 +38,11 @@
 							</ul>
 							<div class="tab-best-con">
 								<ul class="tab-category">
-									<?php include "member/views/includes/text/main/category.php"; ?>
+									<?php include "member/views/text/case/category.php"; ?>
 								</ul>
 								<div class="tab-category-con">
 									<ul class="list-best">
-										<?php include "member/views/includes/text/main/case_01.php"; ?>
+										<?php include "member/views/text/case/case_01.php"; ?>
 									</ul>
 								</div>
 							</div>
@@ -79,11 +75,11 @@
 								<h3 class="main-tit-h3">신규강의</h3>
 							</div>
 							<ul class="tab-category2">
-								<?php include "member/views/includes/text/main/category.php"; ?>
+								<?php include "member/views/text/case/category.php"; ?>
 							</ul>
 							<div class="tab-category2-con">
 								<ul class="list-bbs">
-									<?php include "member/views/includes/text/main/case_02.php"; ?>
+									<?php include "member/views/text/case/case_02.php"; ?>
 								</ul>
 							</div>
 						</div>
@@ -95,7 +91,7 @@
 				<div class="inner">
 					<span class="tit">직장인 자기개발 교육! <strong>해커스와 정부가 수강료를 지원</strong>합니다.</span>
 					<ul>
-						<?php include 'member/views/includes/images/inner_01.php' ?>
+						<?php include 'member/views/images/inner_01.php' ?>
 					</ul>
 				</div>
 			</div>
@@ -108,14 +104,14 @@
 							<h3 class="main-tit-h3">BEST 수강후기</h3>
 						</div>
 						<ul class="list-bbs">
-							<?php include "member/views/includes/text/main/case_03.php"; ?>
+							<?php include "member/views/text/case/case_03.php"; ?>
 						</ul>
 					</div>
 
 					<div class="f-r banner-box">
 						<div class="bxslider-default" data-mode="fade" data-auto="true" data-controls="true" data-pager="true" style="height:254px">
 							<ul class="bxslider">
-								<?php include "member/views/includes/images/banner.php"; ?>
+								<?php include "member/views/images/banner.php"; ?>
 							</ul>
 						</div>
 					</div>
@@ -132,7 +128,7 @@
 							<a href="#" class="f-r mt5">더보기 +</a>
 						</div>
 						<ul class="list-bbs">
-							<?php include "member/views/includes/text/main/case_04.php"; ?>
+							<?php include "member/views/text/case/case_04.php"; ?>
 						</ul>
 					</div>
 
@@ -142,7 +138,7 @@
 							<a href="#" class="f-r mt5">더보기 +</a>
 						</div>
 						<ul class="list-bbs">
-							<?php include "member/views/includes/text/main/case_04.php"; ?>
+							<?php include "member/views/text/case/case_04.php"; ?>
 						</ul>
 					</div>
 
@@ -173,7 +169,7 @@
 						<dt class="txt">오늘 본 과정 <em class="tc-brand">3</em>건</dt>
 						<dd>
 							<ul>
-								<?php include 'member/views/includes/images/inner_02.php' ?>
+								<?php include 'member/views/images/inner_02.php' ?>
 							</ul>
 						</dd>
 					</dl>
@@ -184,34 +180,34 @@
 		</div>
 	</div>
 
-	<script type="text/javascript"> 
-	$(document).ready(function(){
-	//main_slider_applyclass
-	var bnrWrap = $('.slider-applyclass')
-	var bnr_slider = bnrWrap.find('.bxslider');
+	<script type="text/javascript">
+		$(document).ready(function() {
+			//main_slider_applyclass
+			var bnrWrap = $('.slider-applyclass')
+			var bnr_slider = bnrWrap.find('.bxslider');
 
-	slider = bnr_slider.bxSlider({
-		auto: true,
-		mode : 'fade',
-		cutLimit: 4,
-		speed: 500,
-		autoStart:true,
-		pagerCustom: '#bx-pager-apply',
-		onSliderLoad: function(selector){
-			bnrWrap.css("overflow","visible");
-		}
-	});
-	$('.page-applyclass').mouseover(function(){
-		slider.startAuto();
-	});
-});
-</script>
+			slider = bnr_slider.bxSlider({
+				auto: true,
+				mode: 'fade',
+				cutLimit: 4,
+				speed: 500,
+				autoStart: true,
+				pagerCustom: '#bx-pager-apply',
+				onSliderLoad: function(selector) {
+					bnrWrap.css("overflow", "visible");
+				}
+			});
+			$('.page-applyclass').mouseover(function() {
+				slider.startAuto();
+			});
+		});
+	</script>
 
 	<?php
 	include 'member/js/complete.js;'
 	?>
 	<!-- Footer include  -->
-	<?php include 'member/views/includes/footer.php'; ?>
+	<?php include "member/layout/footer.php"; ?>
 </body>
 
 </html>

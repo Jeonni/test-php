@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
 
-<?php include "../member/views/includes/head.php"; ?>
+<?php include "../member/layout/head.php"; ?>
 
 <body>
 	<div id="skip-nav">
@@ -10,7 +10,7 @@
 	</div>
 
 	<!-- Header include -->
-	<?php include "../member/views/includes/header.php"; ?>
+	<?php include "../member/layout/header.php"; ?>
 
 	<div id="container" class="container-full">
 		<div id="content" class="content">
@@ -39,7 +39,7 @@
 					<div class="agree-box">
 						<div class="agree-box-txt">
 							<!-- 이용약관 include -->
-							<?php include "../member/views/includes/text/step_01/terms.php"; ?>
+							<?php include "../member/views/text/detail/terms.php"; ?>
 						</div>
 						<button type="button" class="js_agree_open"><em>펼치기 ▼</em></button>
 						<div class="mt10">
@@ -59,7 +59,7 @@
 					<div class="agree-box">
 						<div class="agree-box-txt">
 							<!-- 개인정보 취급방침 include -->
-							<?php include "../member/views/includes/text/step_01/personal.php"; ?>
+							<?php include "../member/views/text/detail/personal.php"; ?>
 						</div>
 						<button type="button" class="js_agree_open"><em>펼치기 ▼</em></button>
 						<div class="mt10">
@@ -87,7 +87,7 @@
 	</div>
 
 	<!-- Footer include  -->
-	<?php include "../member/views/includes/footer.php"; ?>
+	<?php include "../member/layout/footer.php"; ?>
 
 </body>
 

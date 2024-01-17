@@ -1,15 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
 
-<?php include "../member/views/includes/head.php"; ?>
+<?php include "../member/layout/head.php"; ?>
 
 <body>
 	<div id="skip-nav">
 		<a href="#content">본문 바로가기</a>
 	</div>
 
-	<!-- Header include -->
-	<?php include "../member/views/includes/header.php"; ?>
+	<?php include "../member/layout/header.php"; ?>
 
 	<div id="container" class="container-full">
 		<div id="content" class="content">
@@ -77,7 +76,6 @@
 									<td><input type="text" name="phone_1" id="phone_1" class="input-text" style="width:140px" /> -
 										<input type="text" name="phone_2" id="phone_2" class="input-text" style="width:140px" /> -
 										<input type="text" name="phone_3" id="phone_3" class="input-text" style="width:140px" />
-										<!-- <button type="button" class="btn-s-tin ml10" onclick="requestVerificationCode()">인증번호 받기</button> -->
 									</td>
 								</tr>
 
@@ -110,9 +108,7 @@
 			</div>
 		</div>
 	</div>
-
-	<!-- Footer include  -->
-	<?php include "../member/views/includes/footer.php"; ?>
+	<?php include "../member/layout/footer.php"; ?>
 </body>
 
 </html>

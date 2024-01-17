@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
 
-<?php include "../member/views/includes/head.php"; ?>
+<?php include "../member/layout/head.php"; ?>
 
 <body>
 	<!-- skip nav -->
@@ -12,7 +12,7 @@
 	<!-- //skip nav -->
 
 	<!-- Header include -->
-	<?php include "../member/views/includes/header.php"; ?>
+	<?php include "../member/layout/header.php"; ?>
 
 
 	<div id="container" class="container-full">
@@ -42,7 +42,7 @@
 	</div>
 
 	<!-- Footer include  -->
-	<?php include "../member/views/includes/footer.php"; ?>
+	<?php include "../member/layout/footer.php"; ?>
 
 </body>
 
