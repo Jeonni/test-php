@@ -9,6 +9,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 // 사용자 정보를 가져오는 PHP 파일 include
+
 include "../member/get_user_info.php";
 ?>
 
@@ -52,14 +53,65 @@ include "../member/get_user_info.php";
 								<tr>
 									<th scope="col"><span class="icons">*</span>아이디</th>
 									<td>
-										<input type="text" class="input-text" name="user_id" id="new-user-id" style="width:302px" placeholder="영문자로 시작하는 4~15자의 영문소문자, 숫자" oninput="validateId2()" />
+										<input type="text" class="input-text" name="user_id" id="edit-user-id" style="width:302px" placeholder="영문자로 시작하는 4~15자의 영문소문자, 숫자" oninput="validateId2()" />
 										<a href="#" class="btn-s-tin ml10" onclick="checkDuplicate2()">중복확인</a>
-										<div id="new-id-message" class="id-message"></div>
+										<div id="edit-id-message" class="id-message"></div>
+									</td>
+								</tr>
+
+								<tr>
+									<th scope="col"><span class="icons">*</span>비밀번호</th>
+									<td>
+										<input type="password" class="input-text" name="password" id="edit-password" style="width:302px" placeholder="8-15자의 영문자/숫자 혼합" oninput="validatePassword2()" />
+										<div id="edit-password-message" class="password-message"></div>
 									</td>
 								</tr>
 								<tr>
+									<th scope="col"><span class="icons">*</span>비밀번호 확인</th>
+									<td>
+										<input type="password" class="input-text" id="edit-password-check" style="width:302px" oninput="validateCheckPassword2()" />
+										<div id="edit-password-message" class="password-message"></div>
+									</td>
+								</tr>
+
+								<tr>
+									<th scope="col"><span class="icons">*</span>이메일주소</th>
+									<td>
+										<input type="text" name="email_prefix" class="input-text" id="edit-email" style="width:138px" /> @
+										<select name="email_domain" class="input-sel" style="width:160px">
+											<option value="gmail.com">gmail.com</option>
+											<option value="naver.com">naver.com</option>
+											<option value="daum.com">daum.com</option>
+											<option value="nate.com">nate.com</option>
+											<option value="hanmail.com">hanmail.com</option>
+										</select>
+									</td>
+								</tr>
+
+								<tr>
 									<th scope="col"><span class="icons">*</span>휴대폰 번호</th>
 									<td><?php echo $user_data['phone_number']; ?></td>
+								</tr>
+
+								<tr>
+									<th scope="col"><span class="icons"></span>일반전화 번호</th>
+									<td>
+										<input type="tel" name="landline_1" id="edit-landline_number" class="input-text" style="width:88px" /> -
+										<input type="tel" name="landline_2" id="edit-landline_number" class="input-text" style="width:88px" /> -
+										<input type="tel" name="landline_3" id="edit-landline_number" class="input-text" style="width:88px" />
+									</td>
+								</tr>
+
+								<tr>
+									<th scope="col"><span class="icons">*</span>주소</th>
+									<td>
+										<p>
+											<label>우편번호 <input type="text" class="input-text ml5" style="width:242px" disabled /></label><a href="#" class="btn-s-tin ml10">주소찾기</a>
+										</p>
+										<p class="mt10">
+											<label>주소 <input type="text" name="address" class="input-text ml5" id="edit-address" style="width:719px" /></label>
+										</p>
+									</td>
 								</tr>
 
 							</tbody>

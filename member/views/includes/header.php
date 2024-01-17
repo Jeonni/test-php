@@ -4,6 +4,7 @@ session_start();
 // 세션에서 user_id 가져오기
 if (isset($_SESSION["loggedin"]) && $_SESSION['loggedin'] === true) {
     $user_id = $_SESSION["user_id"];
+    $id = isset($_SESSION['id']) ? $_SESSION['id'] : '';
 }
 
 // 로그아웃 처리
@@ -135,7 +136,7 @@ if (isset($_GET['logout'])) {
                             <!-- 로그인 후 -->
                             <?php if (isset($_SESSION["loggedin"]) && $_SESSION['loggedin'] === true) : ?>
                                 <a>
-                                    <div id="userId"><?php echo $user_id; ?>님</div>
+                                    <div id="userId"><?php echo $user_id ?>님</div>
                                 </a>
                             <?php endif; ?>
                             <a href="#" onclick="modify()">내정보</a>

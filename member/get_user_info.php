@@ -25,4 +25,7 @@ $conn->close();
 
 // $user_data를 JSON 형식으로 반환
 // echo json_encode($user_data);
+
+$_SESSION['id'] = $user_data['id'];
+
 ?>

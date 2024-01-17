@@ -1,50 +1,29 @@
 <?php
 session_start();
 
-include "../member/get_user_info.php";
-
-$user_id = $_POST['user_id'];
-
 include "../member/config/db.php";
+$id = isset($_SESSION['id']) ? $_SESSION['id'] : '';
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = $_POST['email_prefix'] . "@" . $_POST['email_domain'];
+    $landline_number = $_POST['landline_1'] . "-" . $_POST['landline_2'] . "-" . $_POST['landline_3'];
 
-// 'test_user' 테이블에서 'user_id'를 수정하는 쿼리
-$sql = "UPDATE test_user SET user_id = ? WHERE user_id = ?";
+    $sql = "UPDATE test_user SET
+            user_id = '{$_POST["user_id"]}',
+            password = '{$_POST["password"]}',
+            email = '{$email}',
+            landline_number = '{$landline_number}',
+            address = '{$_POST["address"]}'
+            WHERE id = '{$id}'";
 
-// 프리페어드 스타일로 SQL 인젝션 방지
-$stmt = mysqli_prepare($conn, $sql);
+    $result = mysqli_query($conn, $sql);
 
-// 매개변수 바인딩
-mysqli_stmt_bind_param($stmt, "ss", $new_user_id, $old_user_id);
-
-// 새로운 사용자 아이디와 기존 사용자 아이디 설정
-$new_user_id = $user_id;
-$old_user_id = $_SESSION['user_id']; // 이 부분은 세션에 저장된 기존 사용자 아이디를 가져와야 합니다.
-
-// 쿼리 실행
-mysqli_stmt_execute($stmt);
-
-// 성공 여부 확인
-if (mysqli_stmt_affected_rows($stmt) > 0) {
-
-    // 세션에 기존의 정보를 계속해서 저장 ..
-    $_SESSION['user_id'] = $new_user_id;
-
-    echo "
-        <script type=\"text/javascript\">
-            alert(\"정보가 수정되었습니다.\");
-            location.href = \"login.php\";
-        </script>
-    ";
+    if ($result === false) {
+        echo "업데이트에 문제가 생겼습니다. 관리자에게 문의 부탁드려요.";
+        echo mysqli_error($conn);
+    } else {
+        echo "사용자 정보 업데이트";
+    }
 } else {
-    echo "
-        <script type=\"text/javascript\">
-            alert(\"정보 수정에 실패했습니다.\");
-            location.href = \"../member/index.php?mode=modify\";
-        </script>
-    ";
+    echo "폼이 제출되지 않았습니다.";
 }
-
-// 문과 연결 닫기
-mysqli_stmt_close($stmt);
-mysqli_close($conn);

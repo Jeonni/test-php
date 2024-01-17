@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$input_password = $_POST["password"];
 
 	// 데이터베이스에서 사용자 정보 가져오기
-	$sql = "SELECT user_id, password FROM test_user WHERE user_id = ?";
+	$sql = "SELECT id, user_id, password FROM test_user WHERE user_id = ?";
 	$stmt = $conn->prepare($sql);
 	$stmt->bind_param("s", $input_user_id);
 	$stmt->execute();
@@ -22,6 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		if (hash('sha256', $input_password) === $hashed_password) {
 			$_SESSION["loggedin"] = true;
 			$_SESSION["user_id"] = $row["user_id"];
+			$_SESSION["id"] = $row["id"];
 
 			// 리퍼러를 통한 리다이렉트 처리
 			$redirect_url = $_SERVER['HTTP_REFERER'] ?? '/'; // 기본값은 현재 페이지로 설정

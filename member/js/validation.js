@@ -87,8 +87,8 @@ function checkDuplicate() {
 
 // 아이디 유효성 검사
 function validateId2() {
-    const userId = document.querySelector("#new-user-id");
-    const messageDiv = document.getElementById('new-id-message');
+    const userId = document.querySelector("#edit-user-id");
+    const messageDiv = document.getElementById('edit-id-message');
 
     // 아이디 영문자로 시작하는 4-15자의 영소문자
     var userIdRegex = /^[a-z][a-z0-9]{3,14}$/;
@@ -105,7 +105,7 @@ function validateId2() {
 }
 
 function checkDuplicate2() {
-    const userIdInput = document.querySelector("#new-user-id");
+    const userIdInput = document.querySelector("#edit-user-id");
 
     if (!userIdInput.value) {
         alert("아이디를 입력해주세요.");
@@ -155,6 +155,38 @@ function validateCheckPassword() {
     const password = document.querySelector("#password");
     const passwordCheck = document.querySelector("#password-check");
     const messageDiv = document.getElementById('password-message');
+
+    if (password.value && password.value == passwordCheck.value) {
+        messageDiv.innerHTML = "비밀번호가 일치합니다."
+        messageDiv.style.color = "green";
+    } else {
+        messageDiv.innerHTML = "비밀번호가 일치하지 않습니다.";
+        messageDiv.style.color = "red";
+    }
+}
+
+// 비밀번호 조건 유효성 검사
+function validatePassword2() {
+    const password = document.querySelector("#edit-password");
+    const messageDiv = document.getElementById('edit-password-message');
+
+    // 8-15자의 영문자/숫자 조합
+    var passwordRegex = /^[a-zA-Z0-9]{8,15}$/;
+
+    if (passwordRegex.test(password.value)) {
+        messageDiv.innerHTML = "적절한 길이입니다.";
+        messageDiv.style.color = "green";
+    } else {
+        messageDiv.innerHTML = "비밀번호 8-15자의 영문자/숫자 조합이어야 합니다.";
+        messageDiv.style.color = "red";
+    }
+}
+
+// 비밀번호 일치 유효성 검사
+function validateCheckPassword2() {
+    const password = document.querySelector("#edit-password");
+    const passwordCheck = document.querySelector("#edit-password-check");
+    const messageDiv = document.getElementById('edit-password-message');
 
     if (password.value && password.value == passwordCheck.value) {
         messageDiv.innerHTML = "비밀번호가 일치합니다."
