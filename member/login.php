@@ -1,7 +1,4 @@
 <!-- 로그인 -->
-<?php include "../member/loginProcess.php" ?>
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
 
@@ -12,7 +9,7 @@
 		<div class="bg"></div>
 		<div class="login-inner">
 			<h1><a href="/"><img src="http://img.hackershrd.com/common/logo.png" alt="해커스 HRD LOGO" width="142" height="31" /></a></h1>
-			<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+			<form action="../member/model/LoginProcess.php" method="post">
 				<div class="box-login">
 					<div class="login-input">
 						<div class="input-text-box">

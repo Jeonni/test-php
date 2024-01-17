@@ -59,7 +59,7 @@
 							<col style="width:15%" />
 						</colgroup>
 
-						<form action="findIdProcess.php" method="POST">
+						<form action="../member/model/FindIdProcess.php" method="POST">
 							<tbody>
 								<tr>
 									<th scope="col">성명</th>

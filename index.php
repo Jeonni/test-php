@@ -1,4 +1,3 @@
-<!-- 메인 페이지 -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
 <?php include "member/layout/head.php"; ?>
@@ -180,33 +179,10 @@
 		</div>
 	</div>
 
-	<script type="text/javascript">
-		$(document).ready(function() {
-			//main_slider_applyclass
-			var bnrWrap = $('.slider-applyclass')
-			var bnr_slider = bnrWrap.find('.bxslider');
-
-			slider = bnr_slider.bxSlider({
-				auto: true,
-				mode: 'fade',
-				cutLimit: 4,
-				speed: 500,
-				autoStart: true,
-				pagerCustom: '#bx-pager-apply',
-				onSliderLoad: function(selector) {
-					bnrWrap.css("overflow", "visible");
-				}
-			});
-			$('.page-applyclass').mouseover(function() {
-				slider.startAuto();
-			});
-		});
-	</script>
-
 	<?php
 	include 'member/js/complete.js;'
 	?>
-	<!-- Footer include  -->
+
 	<?php include "member/layout/footer.php"; ?>
 </body>
 

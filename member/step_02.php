@@ -1,3 +1,13 @@
+<?php
+require_once '../member/model/SignupModel.php';
+
+$signupModel = new SignupModel();
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $signupModel->signupSavePhoneNumber();
+}
+?>
+
 <!-- 회원가입 2단계 (본인 확인) -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
@@ -5,13 +15,10 @@
 <?php include "../member/layout/head.php"; ?>
 
 <body>
-	<!-- skip nav -->
 	<div id="skip-nav">
 		<a href="#content">본문 바로가기</a>
 	</div>
-	<!-- //skip nav -->
 
-	<!-- Header include -->
 	<?php include "../member/layout/header.php"; ?>
 
 	<div id="container" class="container-full">
@@ -43,7 +50,7 @@
 							<strong>휴대폰 인증</strong>
 							<p>주민번호 없이 메시지 수신 가능한 휴대폰으로 1개 아이디만 회원가입이 가능합니다. </p>
 
-							<form action="savePhoneNumber.php" method="post">
+							<form action="" method="post">
 								<br />
 								<input type="text" class="input-text" id="phone_1" name="phone_1" style="width:50px" required /> -
 								<input type="text" class="input-text" id="phone_2" name="phone_2" style="width:50px" /> -
@@ -63,7 +70,6 @@
 		</div>
 	</div>
 
-	<!-- Footer include  -->
 	<?php include "../member/layout/footer.php"; ?>
 
 	</div>

@@ -13,13 +13,9 @@ $phoneNumber3 = isset($_SESSION['phone_number3']) ? $_SESSION['phone_number3'] :
 ?>
 
 <body>
-	<!-- skip nav -->
 	<div id="skip-nav">
 		<a href="#content">본문 바로가기</a>
 	</div>
-	<!-- //skip nav -->
-
-	<!-- Header include -->
 	<?php include "../member/layout/header.php"; ?>
 
 	<div id="container" class="container-full">
@@ -42,7 +38,7 @@ $phoneNumber3 = isset($_SESSION['phone_number3']) ? $_SESSION['phone_number3'] :
 				</div>
 
 				<div class="section-content">
-					<form action="signupProcess.php" method="POST" id="signup-form">
+					<form action="../member/model/SignupProcess.php" method="POST" id="signup-form">
 						<table cellpadding="0" cellspacing="0" class="tbl-col-join">
 							<colgroup>
 								<col style="width:15%">

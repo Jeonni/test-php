@@ -8,9 +8,7 @@ if (!isset($_SESSION['user_id'])) {
 	exit();
 }
 
-// 사용자 정보를 가져오는 PHP 파일 include
-
-include "../member/get_user_info.php";
+include "../member/GetUserInfo.php";
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -37,7 +35,7 @@ include "../member/get_user_info.php";
 				</div>
 
 				<div class="section-content">
-					<form action="informationChange.php" method="POST" id="modify-form">
+					<form action="../member/model/EditProcess.php" method="POST" id="modify-form">
 						<table cellpadding="0" cellspacing="0" class="tbl-col-join">
 							<caption class="hidden">강의정보</caption>
 							<colgroup>
@@ -53,7 +51,7 @@ include "../member/get_user_info.php";
 									<th scope="col"><span class="icons">*</span>아이디</th>
 									<td>
 										<input type="text" class="input-text" name="user_id" id="edit-user-id" style="width:302px" placeholder="영문자로 시작하는 4~15자의 영문소문자, 숫자" oninput="validateId2()" />
-										<a href="#" class="btn-s-tin ml10" onclick="checkDuplicate2()">중복확인</a>
+										<!-- <a href="#" class="btn-s-tin ml10" onclick="checkDuplicate2()">중복확인</a> -->
 										<div id="edit-id-message" class="id-message"></div>
 									</td>
 								</tr>

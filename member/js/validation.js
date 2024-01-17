@@ -56,82 +56,71 @@ function validateId() {
 
 }
 
+// function checkDuplicate() {
+//     const userIdInput = document.querySelector("#user-id");
+
+//     if (!userIdInput.value) {
+//         alert("아이디를 입력해주세요.");
+//         return;
+//     }
+
+//     // 아이디 중복 확인: AJAX 요청
+//     $.ajax({
+//         method: "POST",
+//         url: "CheckDuplicate.php",
+//         data: {
+//             userId: userIdInput.value, // 수정
+//         },
+//         success: function (response) {
+//             if (response === "unique") {
+//                 alert("사용 가능한 아이디입니다.");
+//             } else {
+//                 alert("이미 사용 중인 아이디입니다.");
+//             }
+//         },
+//         error: function (response) {
+//             alert("서버 오류가 발생했습니다. 잠시 후 다시 시도해주세요.");
+//         }
+//     });
+// }
+
+
+
 function checkDuplicate() {
     const userIdInput = document.querySelector("#user-id");
+    const idCheckResult = document.querySelector("#id-check-result");
+    const signupButton = document.querySelector("#signup-button");
 
+    // 사용자가 아이디를 입력했는지 확인
     if (!userIdInput.value) {
         alert("아이디를 입력해주세요.");
         return;
     }
 
-    // 아이디 중복 확인: AJAX 요청
+    // 아이디 중복을 확인하기 위한 AJAX 요청
     $.ajax({
         method: "POST",
         url: "checkDuplicate.php",
         data: {
-            userId: userIdInput.value
+            user_id: userIdInput.value
         },
         success: function (response) {
+            // idCheckResult.textContent = "사용 가능한 아이디입니다.";
             alert("사용 가능한 아이디입니다.");
+            signupButton.disabled = false; // 사용 가능한 아이디일 경우, 회원가입 버튼 활성화
+
         },
         error: function (xhr, status, err) {
             if (xhr.status === 400) {
+                // idCheckResult.textContent = "이미 사용 중인 아이디입니다.";
                 alert("이미 사용 중인 아이디입니다.");
+                signupButton.disabled = true; // 이미 사용 중인 아이디일 경우, 회원가입 버튼 비활성화
             } else {
                 alert("서버 오류가 발생했습니다. 잠시 후 다시 시도해주세요.");
             }
         }
     });
 }
-
-
-// 아이디 유효성 검사
-function validateId2() {
-    const userId = document.querySelector("#edit-user-id");
-    const messageDiv = document.getElementById('edit-id-message');
-
-    // 아이디 영문자로 시작하는 4-15자의 영소문자
-    var userIdRegex = /^[a-z][a-z0-9]{3,14}$/;
-
-    // 아이디 유효성 검사
-    if (userIdRegex.test(userId.value)) {
-        messageDiv.innerHTML = "아이디 유효성 조건에 일치합니다.";
-        messageDiv.style.color = "green";
-    } else {
-        messageDiv.innerHTML = "아이디는 영문자로 시작하는 4-15자의 영소문자, 숫자여야 합니다.";
-        messageDiv.style.color = "red";
-    }
-
-}
-
-function checkDuplicate2() {
-    const userIdInput = document.querySelector("#edit-user-id");
-
-    if (!userIdInput.value) {
-        alert("아이디를 입력해주세요.");
-        return;
-    }
-
-    // 아이디 중복 확인: AJAX 요청
-    $.ajax({
-        method: "POST",
-        url: "checkDuplicate.php",
-        data: {
-            userId: userIdInput.value
-        },
-        success: function (response) {
-            alert("사용 가능한 아이디입니다.");
-        },
-        error: function (xhr, status, err) {
-            if (xhr.status === 400) {
-                alert("이미 사용 중인 아이디입니다.");
-            } else {
-                alert("서버 오류가 발생했습니다. 잠시 후 다시 시도해주세요.");
-            }
-        }
-    });
-}
-
 
 // 비밀번호 조건 유효성 검사
 function validatePassword() {

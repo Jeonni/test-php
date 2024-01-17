@@ -1,14 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
 
-<?php include "../member/views/includes/head.php"; ?>
+<?php include "../member/layout/head.php"; ?>
 
 <body>
 	<div id="skip-nav">
 		<a href="#content">본문 바로가기</a>
 	</div>
 
-	<?php include "../member/views/includes/header.php"; ?>
+	<?php include "../member/layout/header.php"; ?>
 
 	<div id="container" class="container-full">
 		<div id="content" class="content">
@@ -23,7 +23,7 @@
 
 				<ul class="tab-list">
 					<li class="on"><a href="#">아이디 찾기</a></li>
-					<li><a href="#">비밀번호 찾기</a></li>
+					<li><a href="#" onclick="find_password()">비밀번호 찾기</a></li>
 				</ul>
 
 				<div class="tit-box-h4">
@@ -43,8 +43,7 @@
 		</div>
 	</div>
 
-	<!-- Footer include  -->
-	<?php include "../member/views/includes/footer.php"; ?>
+	<?php include "../member/layout/footer.php"; ?>
 </body>
 
 </html>
