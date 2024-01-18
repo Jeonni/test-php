@@ -45,12 +45,12 @@ include "../member/GetUserInfo.php";
 							<tbody>
 								<tr>
 									<th scope="col"><span class="icons">*</span>이름</th>
-									<td><?php echo $user_data['name']; ?></td>
+									<td><?=$user_data['name'] ?></td>
 								</tr>
 								<tr>
 									<th scope="col"><span class="icons">*</span>아이디</th>
 									<td>
-										<input type="text" class="input-text" name="user_id" id="edit-user-id" style="width:302px" placeholder="영문자로 시작하는 4~15자의 영문소문자, 숫자" oninput="validateId2()" />
+										<input type="text" class="input-text" name="user_id" id="edit-user-id" style="width:302px" placeholder="영문자로 시작하는 4~15자의 영문소문자, 숫자" oninput="validateId2()"/>
 										<!-- <a href="#" class="btn-s-tin ml10" onclick="checkDuplicate2()">중복확인</a> -->
 										<div id="edit-id-message" class="id-message"></div>
 									</td>

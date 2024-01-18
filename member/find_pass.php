@@ -63,12 +63,16 @@
 							<tbody>
 								<tr>
 									<th scope="col">성명</th>
-									<td><input type="text" name="name" id="name" class="input-text" style="width:302px" /></td>
+									<td>
+										<input type="text" name="name" class="input-text" style="width:302px" value="<?php echo isset($_GET['name']) ? htmlspecialchars($_GET['name']) : ''; ?>" readonly />
+									</td>
 								</tr>
 
 								<tr>
 									<th scope="col">아이디</th>
-									<td><input type="text" name="user_id" id="user_id" class="input-text" style="width:302px" /></td>
+									<td>
+										<input type="text" name="user_id" class="input-text" style="width:302px" value="<?php echo isset($_GET['user_id']) ? htmlspecialchars($_GET['user_id']) : ''; ?>" readonly />
+									</td>
 								</tr>
 
 								<tr>

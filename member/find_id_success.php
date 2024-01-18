@@ -37,8 +37,7 @@
 
 				<div class="box-btn mt30">
 					<a href="#" class="btn-l" onclick="login()">로그인하러 가기</a>
-					<a href="#" class="btn-l-line ml5" onclick="find_password()">비밀번호 찾기</a>
-				</div>
+					<a href="../member/find_pass.php?name=<?php echo urlencode($_GET['name']); ?>&user_id=<?php echo urlencode($_GET['user_id']); ?>" class="btn-l-line ml5">비밀번호 찾으러 가기</a>
 			</div>
 		</div>
 	</div>
