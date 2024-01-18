@@ -56,36 +56,6 @@ function validateId() {
 
 }
 
-// function checkDuplicate() {
-//     const userIdInput = document.querySelector("#user-id");
-
-//     if (!userIdInput.value) {
-//         alert("아이디를 입력해주세요.");
-//         return;
-//     }
-
-//     // 아이디 중복 확인: AJAX 요청
-//     $.ajax({
-//         method: "POST",
-//         url: "CheckDuplicate.php",
-//         data: {
-//             userId: userIdInput.value, // 수정
-//         },
-//         success: function (response) {
-//             if (response === "unique") {
-//                 alert("사용 가능한 아이디입니다.");
-//             } else {
-//                 alert("이미 사용 중인 아이디입니다.");
-//             }
-//         },
-//         error: function (response) {
-//             alert("서버 오류가 발생했습니다. 잠시 후 다시 시도해주세요.");
-//         }
-//     });
-// }
-
-
-
 function checkDuplicate() {
     const userIdInput = document.querySelector("#user-id");
     const idCheckResult = document.querySelector("#id-check-result");

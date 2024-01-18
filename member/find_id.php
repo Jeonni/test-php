@@ -35,7 +35,7 @@
 					<dd>
 						고객님이 회원 가입 시 등록한 휴대폰 번호와 입력하신 휴대폰 번호가 동일해야 합니다.
 						<label class="input-sp big">
-							<input type="radio" name="radio" checked="checked" />
+							<input type="radio" name="radio" checked="checked" onclick="showForm('phone')" />
 							<span class="input-txt"></span>
 						</label>
 					</dd>
@@ -46,26 +46,24 @@
 					<dd>
 						고객님이 회원 가입 시 등록한 이메일 주소와 입력하신 이메일 주소가 동일해야 합니다.
 						<label class="input-sp big">
-							<input type="radio" name="radio" />
+							<input type="radio" name="radio" onclick="showForm('email')" />
 							<span class="input-txt"></span>
 						</label>
 					</dd>
 				</dl>
 
 				<div class="section-content mt30">
-					<table cellpadding="0" cellspacing="0" class="tbl-col-join">
-						<caption class="hidden">아이디 찾기 개인정보 입력</caption>
-						<colgroup>
-							<col style="width:15%" />
-						</colgroup>
-						
-						<form action="../member/model/FindIdByPhoneProcess.php" method="POST">
+
+					<form action="../member/model/FindIdByPhoneProcess.php" method="POST" id="phoneForm">
+						<table cellpadding="0" cellspacing="0" class="tbl-col-join">
+							<colgroup>
+								<col style="width:15%" />
+							</colgroup>
 							<tbody>
 								<tr>
 									<th scope="col">성명</th>
 									<td><input type="text" name="name" id="name" class="input-text" style="width:302px" /></td>
 								</tr>
-
 								<tr>
 									<th scope="col">휴대폰 번호</th>
 									<td><input type="text" name="phone_1" id="phone_1" class="input-text" style="width:140px" /> -
@@ -73,7 +71,6 @@
 										<input type="text" name="phone_3" id="phone_3" class="input-text" style="width:140px" />
 									</td>
 								</tr>
-						
 								<tr>
 									<th scope="col">인증번호</th>
 									<td>
@@ -82,10 +79,15 @@
 									</td>
 								</tr>
 							</tbody>
-						</form>
+						</table>
+					</form>
 
 
-						<form action="../member/model/FindIdByEmailProcess.php" method="POST">
+					<form action="../member/model/FindIdByEmailProcess.php" method="POST" id="emailForm" style="display: none">
+						<table cellpadding="0" cellspacing="0" class="tbl-col-join">
+							<colgroup>
+								<col style="width:15%" />
+							</colgroup>
 							<tbody>
 								<tr>
 									<th scope="col">성명</th>
@@ -114,14 +116,27 @@
 									</td>
 								</tr>
 							</tbody>
-						</form>
+						</table>
+					</form>
 
-					</table>
 				</div>
 			</div>
 		</div>
 	</div>
 	<?php include "../member/layout/footer.php"; ?>
+
+	<script>
+		function showForm(type) {
+			if (type === 'phone') {
+				document.getElementById('phoneForm').style.display = 'block';
+				document.getElementById('emailForm').style.display = 'none';
+			} else if (type === 'email') {
+				document.getElementById('phoneForm').style.display = 'none';
+				document.getElementById('emailForm').style.display = 'block';
+			}
+		}
+	</script>
+
 </body>
 
 </html>
