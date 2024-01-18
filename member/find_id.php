@@ -58,8 +58,8 @@
 						<colgroup>
 							<col style="width:15%" />
 						</colgroup>
-
-						<form action="../member/model/FindIdProcess.php" method="POST">
+						
+						<form action="../member/model/FindIdByPhoneProcess.php" method="POST">
 							<tbody>
 								<tr>
 									<th scope="col">성명</th>
@@ -73,7 +73,24 @@
 										<input type="text" name="phone_3" id="phone_3" class="input-text" style="width:140px" />
 									</td>
 								</tr>
+						
+								<tr>
+									<th scope="col">인증번호</th>
+									<td>
+										<input type="text" class="input-text" id="user_input_code" name="user_input_code" style="width:478px" />
+										<button type="submit" class="btn-s-tin ml10">인증번호 확인</button>
+									</td>
+								</tr>
+							</tbody>
+						</form>
 
+
+						<form action="../member/model/FindIdByEmailProcess.php" method="POST">
+							<tbody>
+								<tr>
+									<th scope="col">성명</th>
+									<td><input type="text" name="name" id="name" class="input-text" style="width:302px" /></td>
+								</tr>
 								<tr>
 									<th scope="col">이메일 주소</th>
 									<td>
